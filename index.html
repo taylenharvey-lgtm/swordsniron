@@ -5,23 +5,26 @@
   <title>Anvil &amp; Alchemy</title>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&amp;family=Eczar:wght@600;700;800&amp;display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#26180f;--parchment:#f4ddb0;--paper:#ffecc8;--iron:#332b28;--brass:#c88b31;--ember:#dc5a26;--glow:#ffbe4b;--moss:#476544}
+    :root{--ink:#26180f;--paper:#ffecc8;--iron:#332b28;--brass:#c88b31;--ember:#dc5a26;--glow:#ffbe4b}
     *{box-sizing:border-box} body{margin:0;font-family:Alegreya,serif;color:var(--ink);background:#1d1614;min-width:320px}
     body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(circle at 12% 15%,#f08b3d 0 1px,transparent 2px),radial-gradient(circle at 83% 31%,#ffd56b 0 1px,transparent 2px),radial-gradient(circle at 55% 77%,#cb4e23 0 1px,transparent 2px);background-size:100px 120px,145px 110px,130px 160px;animation:embers 8s linear infinite}
     @keyframes embers{50%{transform:translateY(-12px)}} @keyframes rise{to{transform:translateY(-18px);opacity:0}}
     .game-shell{width:100%;min-height:calc(100 * min(var(--vh, 1vh), 1vh));background:linear-gradient(130deg,#201714,#38251c 45%,#211817);padding:16px}
-    .forge-board{max-width:1500px;margin:auto}.iron-frame{border:2px solid #78532f;box-shadow:inset 0 0 0 4px #2b201b,0 9px 25px #0b0706;border-radius:14px}
+    .forge-board{max-width:1550px;margin:auto}.iron-frame{border:2px solid #78532f;box-shadow:inset 0 0 0 4px #2b201b,0 9px 25px #0b0706;border-radius:14px}
     .parchment{background:linear-gradient(135deg,#ffe9ba,#edcd92);border:1px solid #af7838;box-shadow:inset 0 0 22px #b7784530}
     .dark-panel{background:linear-gradient(145deg,#3a2a23,#211917);color:#ffe8bb;border:1px solid #72502d}
     .title-font{font-family:Eczar,serif}.status-pill{background:#251b16;border:1px solid #855d30;color:#ffe4ab;padding:.45rem .7rem;border-radius:999px;white-space:nowrap}
     .panel-title{font-family:Eczar,serif;font-size:1.1rem;color:#6d3519;border-bottom:2px solid #c99045;padding-bottom:.35rem;margin-bottom:.65rem}
-    button,select{font:inherit} button{transition:.18s transform,.18s filter;cursor:pointer}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:focus-visible,select:focus-visible{outline:3px solid #ffe477;outline-offset:3px}button:disabled{opacity:.48;cursor:not-allowed;transform:none}
-    .action{border:1px solid #713719;background:linear-gradient(#e78037,#ae421c);color:#fff5d4;padding:.55rem .8rem;border-radius:8px;font-weight:700}.secondary{border:1px solid #85603a;background:#f0cf91;color:#392114;padding:.5rem .75rem;border-radius:8px;font-weight:700}.danger{background:#742d27;color:#fff1d2;border:1px solid #be6450;padding:.45rem .7rem;border-radius:8px}
-    .tiny{font-size:.86rem}.muted{color:#785337}.badge{display:inline-block;padding:.14rem .48rem;border-radius:999px;font-weight:700;font-size:.8rem;background:#68482d;color:#ffe8b5}.rare-Rare,.rare-Absurd{background:#70385b;color:#ffe6ff}.rare-Unusual{background:#27556a;color:#dff7ff}
-    .recipe-card,.upgrade-card,.stock-row{border:1px solid #b68143;background:#fff0cb;border-radius:9px;padding:.55rem}.recipe-card.selected{outline:3px solid #d65a28;background:#ffe0a0}.recipe-card button{width:100%}
+    button,select,input{font:inherit}button{transition:.18s transform,.18s filter;cursor:pointer}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffe477;outline-offset:3px}button:disabled{opacity:.48;cursor:not-allowed;transform:none}
+    .action{border:1px solid #713719;background:linear-gradient(#e78037,#ae421c);color:#fff5d4;padding:.55rem .8rem;border-radius:8px;font-weight:700}.secondary{border:1px solid #85603a;background:#f0cf91;color:#392114;padding:.5rem .75rem;border-radius:8px;font-weight:700}.danger{background:#742d27;color:#fff1d2;border:1px solid #be6450;padding:.45rem .7rem;border-radius:8px}.equip{background:#476544;color:#fff5d4;border:1px solid #284a2d;padding:.4rem .65rem;border-radius:8px;font-weight:700}
+    .tiny{font-size:.86rem}.muted{color:#785337}.badge{display:inline-block;padding:.14rem .48rem;border-radius:999px;font-weight:700;font-size:.8rem;background:#68482d;color:#ffe8b5}.rare-Rare,.rare-Absurd{background:#70385b;color:#ffe6ff}.rare-Unusual{background:#27556a;color:#dff7ff}.rare-Nexus{background:linear-gradient(135deg,#1a1742,#8b39a9,#f0a12d);color:#fff9d7;border:1px solid #ffe08a;box-shadow:0 0 12px #c95cff88}
+    .recipe-card,.upgrade-card,.stock-row,.decor-card{border:1px solid #b68143;background:#fff0cb;border-radius:9px;padding:.55rem}.recipe-card.selected{outline:3px solid #d65a28;background:#ffe0a0}.recipe-card button{width:100%}
     .scrollbox{max-height:265px;overflow:auto;padding-right:4px}.scrollbox::-webkit-scrollbar{width:8px}.scrollbox::-webkit-scrollbar-thumb{background:#a66c34;border-radius:9px}
     .log-entry{border-left:3px solid #a95f2b;padding:.35rem .55rem;margin:.4rem 0;background:#ffffff42}.smoke{position:absolute;border-radius:50%;background:#e9d3b250;filter:blur(4px);animation:rise 3.5s infinite ease-out}
-    .modal-backdrop{position:fixed;inset:0;background:#120c09bb;display:flex;align-items:center;justify-content:center;padding:18px;z-index:30}.modal-box{max-width:510px;width:100%;padding:22px;border-radius:16px}
+    .modal-backdrop{position:fixed;inset:0;background:#120c09bb;display:flex;align-items:center;justify-content:center;padding:18px;z-index:30}.modal-box{max-width:560px;width:100%;padding:22px;border-radius:16px}
+    .chip{display:inline-block;background:#6d3519;color:#fff0cb;border-radius:999px;padding:.12rem .42rem;margin:.08rem;font-size:.78rem;font-weight:700}.need-row{border:1px dashed #a86d36;border-radius:7px;padding:.38rem .5rem;background:#ffffff1b}
+    .effect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:.35rem;max-height:170px;overflow:auto;padding:.35rem;border:1px solid #bd884c;border-radius:9px;background:#fff7df}.effect-choice{display:flex;gap:.35rem;align-items:center;font-size:.84rem;padding:.15rem}.effect-choice input{accent-color:#b34b22}
+    .tab-btn{border:1px solid #8c6036;background:#f7d99f;padding:.38rem .6rem;border-radius:8px;font-weight:700}.tab-btn.active{background:#6d3519;color:#fff0cb}.hidden{display:none!important}
     @media(max-width:800px){.game-shell{padding:8px}.status-wrap{justify-content:flex-start}.scrollbox{max-height:210px}}
   </style>
   <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
@@ -36,31 +39,55 @@
     <header data-template-id="top-banner" class="canva-header dark-panel iron-frame p-4 relative overflow-hidden" style="background: linear-gradient(145deg, rgb(58, 42, 35), rgb(33, 25, 23));"><span class="smoke" style="width:55px;height:55px;left:7%;bottom:5px"></span><span class="smoke" style="width:38px;height:38px;right:14%;bottom:1px;animation-delay:1s"></span>
      <div class="flex flex-wrap items-center justify-between gap-3 relative">
       <div>
-       <h1 data-template-id="game-title" class="canva-text title-font text-2xl md:text-3xl leading-tight" style="color: rgb(255, 227, 166); font-weight: 800; font-style: normal; font-size: 32px;">Anvil &amp; Alchemy</h1>
+       <h1 data-template-id="game-title" class="canva-text title-font leading-tight" style="color: rgb(255, 227, 166); font-weight: 800; font-style: normal; font-size: 32px;">Anvil &amp; Alchemy</h1>
        <p data-template-id="game-subtitle" class="canva-text tiny text-amber-100" style="color: rgb(248, 214, 156); font-weight: 400; font-style: italic; font-size: 16px;">The Extremely Questionable Forge</p>
       </div>
-      <div class="status-wrap flex flex-wrap gap-2" aria-label="Game status"><span class="status-pill">Day <b id="dayValue">1</b></span><span class="status-pill">🪙 <b id="coinValue">0</b></span><span class="status-pill">★ <b id="repValue">0</b></span><span class="status-pill">Level <b id="levelValue">1</b></span><span class="status-pill">Patience <b id="patienceValue">0</b></span>
+      <div class="status-wrap flex flex-wrap gap-2" aria-label="Game status">
+       <span class="status-pill">Day <b id="dayValue">1</b></span><span class="status-pill">🪙 <b id="coinValue">0</b></span><span class="status-pill">★ <b id="repValue">0</b></span><span class="status-pill">Level <b id="levelValue">1</b></span><span class="status-pill">Patience <b id="patienceValue">0</b></span>
       </div>
      </div>
     </header>
     <main class="mt-4 grid grid-cols-1 xl:grid-cols-12 gap-4">
      <section class="xl:col-span-8 space-y-4" aria-label="Workshop">
-      <div data-template-id="workshop-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+      <section data-template-id="workshop-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
        <div class="flex flex-wrap justify-between gap-2 items-center">
         <h2 data-template-id="workshop-heading" class="canva-text panel-title mb-0" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">The Workshop Floor</h2><span id="forgeMood" class="badge">The anvil is judging you.</span>
        </div>
-       <div class="grid md:grid-cols-2 gap-4 mt-3">
+       <div class="flex flex-wrap gap-2 mt-3" role="tablist" aria-label="Workshop modes"><button id="brewTab" class="tab-btn active" type="button" role="tab" aria-selected="true">Potion Laboratory</button> <button id="forgeTab" class="tab-btn" type="button" role="tab" aria-selected="false">Forge Bench</button>
+       </div>
+       <div class="grid lg:grid-cols-2 gap-4 mt-3">
         <div>
-         <h3 data-template-id="recipes-heading" class="canva-text font-bold text-lg" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 19px;">Pick a recipe</h3>
+         <h3 data-template-id="recipes-heading" class="canva-text font-bold" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 19px;">Choose your craft</h3>
          <div id="recipeList" class="grid grid-cols-2 gap-2 mt-2"></div>
+         <div id="effectArea" class="mt-3"><label data-template-id="effects-label" class="canva-text font-bold block mb-1" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Potion effects — select one or more</label>
+          <div id="effectsList" class="effect-grid" aria-label="Select potion effects"></div>
+          <p id="effectSummary" class="tiny muted mt-2" aria-live="polite"></p>
+         </div>
         </div>
-        <div><label data-template-id="material-label" class="canva-text font-bold block mb-1" for="materialSelect" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Choose primary material</label> <select id="materialSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select> <label data-template-id="modifier-label" class="canva-text font-bold block mt-3 mb-1" for="modifierSelect" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Optional modifier</label> <select id="modifierSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+        <div><label data-template-id="material-label" class="canva-text font-bold block mb-1" for="materialSelect" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Choose primary material</label> <select id="materialSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+         <div id="potionControls" class="grid sm:grid-cols-2 gap-2 mt-3">
+          <div>
+           <label class="font-bold tiny block" for="baseSelect">Potion base</label><select id="baseSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+          </div>
+          <div>
+           <label class="font-bold tiny block" for="colorSelect">Potion colour</label><select id="colorSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+          </div>
+          <div>
+           <label class="font-bold tiny block" for="finishSelect">Visual finish</label><select id="finishSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+          </div>
+          <div>
+           <label class="font-bold tiny block" for="shapeSelect">Bottle shape</label><select id="shapeSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+          </div>
+          <div class="sm:col-span-2">
+           <label class="font-bold tiny block" for="packageSelect">Packaging</label><select id="packageSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+          </div>
+         </div><label data-template-id="modifier-label" class="canva-text font-bold block mt-3 mb-1" for="modifierSelect" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Optional modifier</label> <select id="modifierSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
          <p id="craftPreview" class="tiny muted mt-3"></p>
-         <div class="flex flex-wrap gap-2 mt-3"><button id="craftBtn" data-template-id="craft-button" class="canva-button action" type="button" style="background: linear-gradient(rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="hammer" class="inline w-4"></i> <span data-template-id="craft-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">Craft Item</span></button> <button id="brewBtn" data-template-id="brew-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="flask-conical" class="inline w-4"></i> <span data-template-id="brew-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Brew Potion</span></button> <button id="restockBtn" data-template-id="restock-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="package-plus" class="inline w-4"></i> <span data-template-id="restock-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Restock Materials</span></button>
+         <div class="flex flex-wrap gap-2 mt-3"><button id="craftBtn" data-template-id="craft-button" class="canva-button action" type="button" style="background: linear-gradient(0deg, rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="hammer" class="inline w-4"></i> <span data-template-id="craft-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">Craft Item</span></button> <button id="brewBtn" data-template-id="brew-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="flask-conical" class="inline w-4"></i> <span data-template-id="brew-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Brew Potion</span></button> <button id="restockBtn" data-template-id="restock-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="package-plus" class="inline w-4"></i> <span data-template-id="restock-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Restock Materials</span></button>
          </div>
         </div>
        </div>
-      </div>
+      </section>
       <div class="grid md:grid-cols-2 gap-4">
        <section data-template-id="inventory-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
         <h2 data-template-id="inventory-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Stock &amp; Materials</h2>
@@ -70,9 +97,16 @@
        </section>
        <section data-template-id="upgrade-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
         <h2 data-template-id="upgrades-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Workshop Upgrades</h2>
-        <div id="upgradeList" class="space-y-2"></div><button id="endDayBtn" data-template-id="end-day-button" class="canva-button action w-full mt-3" type="button" style="background: linear-gradient(rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="moon" class="inline w-4"></i> <span data-template-id="end-day-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">End Day</span></button>
+        <div id="upgradeList" class="space-y-2"></div><button id="endDayBtn" data-template-id="end-day-button" class="canva-button action w-full mt-3" type="button" style="background: linear-gradient(0deg, rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="moon" class="inline w-4"></i> <span data-template-id="end-day-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">End Day</span></button>
        </section>
       </div>
+      <section data-template-id="decor-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+       <div class="flex flex-wrap justify-between items-center gap-2">
+        <h2 data-template-id="decor-heading" class="canva-text panel-title mb-0" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Shop Customization</h2><span id="decorBonus" class="badge">Reputation bonus: +0</span>
+       </div>
+       <p data-template-id="decor-copy" class="canva-text tiny muted mt-2" style="color: rgb(59, 33, 20); font-weight: 400; font-style: normal; font-size: 16px;">Buy and equip decorations to give the forge more personality, more polish, and a modest reputation appeal.</p>
+       <div id="decorList" class="grid md:grid-cols-2 xl:grid-cols-3 gap-2 mt-3"></div>
+      </section>
       <div class="grid md:grid-cols-2 gap-4">
        <section data-template-id="request-log-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
         <h2 data-template-id="request-log-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Request Log</h2>
@@ -88,36 +122,21 @@
       <section data-template-id="customer-panel" class="canva-card dark-panel iron-frame p-4" style="background: linear-gradient(145deg, rgb(58, 42, 35), rgb(33, 25, 23));">
        <div class="flex justify-between items-start gap-3">
         <div>
-         <p data-template-id="commission-kicker" class="canva-text text-amber-300 font-bold tiny" style="color: rgb(244, 187, 83); font-weight: 700; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">CURRENT COMMISSION</p>
+         <p data-template-id="commission-kicker" class="canva-text text-amber-300 font-bold tiny" style="color: rgb(244, 187, 83); font-weight: 700; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">CURRENT POTION COMMISSION</p>
          <h2 id="customerName" class="title-font text-2xl"></h2>
         </div><span id="rarityBadge" class="badge"></span>
        </div>
        <p id="customerPersonality" class="italic text-amber-100 mt-1"></p>
-       <div class="mt-3 space-y-2 text-sm">
-        <div>
-         <b>Order:</b> <span id="requestItem"></span>
-        </div>
-        <div>
-         <b>Material:</b> <span id="requestMaterial"></span>
-        </div>
-        <div>
-         <b>Wanted traits:</b> <span id="requestTraits"></span>
-        </div>
-        <div>
-         <b>Quantity:</b> <span id="requestQty"></span> · <b>Urgency:</b> <span id="requestUrgency"></span>
-        </div>
-        <div>
-         <b>Budget:</b> 🪙 <span id="requestBudget"></span>
-        </div>
-       </div>
+       <div id="requestRequirements" class="mt-3 space-y-2 text-sm"></div>
        <blockquote id="requestReason" class="mt-3 border-l-4 border-amber-500 pl-3 text-amber-100 italic"></blockquote>
-       <div class="grid grid-cols-2 gap-2 mt-4"><button id="sellBtn" data-template-id="sell-button" class="canva-button action" type="button" style="background: linear-gradient(rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="coins" class="inline w-4"></i> <span data-template-id="sell-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">Sell from Stock</span></button> <button id="newCustomerBtn" data-template-id="new-customer-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="users" class="inline w-4"></i> <span data-template-id="new-customer-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">New Customer</span></button>
+       <div class="grid grid-cols-2 gap-2 mt-4">
+        <button id="sellBtn" data-template-id="sell-button" class="canva-button action" type="button" style="background: linear-gradient(0deg, rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="coins" class="inline w-4"></i> <span data-template-id="sell-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">Sell from Stock</span></button><button id="newCustomerBtn" data-template-id="new-customer-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="users" class="inline w-4"></i> <span data-template-id="new-customer-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">New Customer</span></button>
        </div>
        <p id="customerHint" class="tiny text-amber-200 mt-3"></p>
       </section>
       <section data-template-id="howto-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
        <h2 data-template-id="howto-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">How to Play</h2>
-       <p data-template-id="howto-copy" class="canva-text" style="color: rgb(59, 33, 20); font-weight: 400; font-style: normal; font-size: 16px;">Read the commission, select a recipe and material, then craft or brew. Offer crafted stock to the customer and match category, material, and traits for the best reward. Upgrade the workshop, survive weird events, and keep your reputation out of the dungeon.</p><button id="resetBtn" data-template-id="reset-button" class="canva-button danger mt-3" type="button" style="background: rgb(116, 45, 39); color: rgb(255, 241, 210);"><i data-lucide="rotate-ccw" class="inline w-4"></i> <span data-template-id="reset-button-text" class="canva-text" style="color: rgb(255, 241, 210); font-weight: 700; font-style: normal; font-size: 16px;">New Game / Reset</span></button>
+       <p data-template-id="howto-copy" class="canva-text" style="color: rgb(59, 33, 20); font-weight: 400; font-style: normal; font-size: 16px;">Read every potion requirement, select a material and bottle presentation, then choose all requested effects before brewing. Exact matches earn the best reward. Nexus visitors are rare but guaranteed to arrive within each five-day interval.</p><button id="resetBtn" data-template-id="reset-button" class="canva-button danger mt-3" type="button" style="background: rgb(116, 45, 39); color: rgb(255, 241, 210);"><i data-lucide="rotate-ccw" class="inline w-4"></i> <span data-template-id="reset-button-text" class="canva-text" style="color: rgb(255, 241, 210); font-weight: 700; font-style: normal; font-size: 16px;">New Game / Reset</span></button>
        <p id="saveStatus" class="tiny muted mt-2" aria-live="polite">Preparing the ledger…</p>
       </section>
      </aside>
@@ -128,116 +147,424 @@
    <div class="modal-box parchment iron-frame">
     <h2 id="modalTitle" class="title-font text-2xl"></h2>
     <p id="modalCopy" class="mt-2"></p>
-    <div id="modalActions" class="flex gap-2 mt-5"></div>
+    <div id="modalActions" class="flex flex-wrap gap-2 mt-5"></div>
    </div>
   </div>
   <script>
 (() => {
-  const $=id=>document.getElementById(id);
-  const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
-  const pick=a=>a[Math.floor(Math.random()*a.length)];
-  const weighted=a=>{let n=Math.random()*a.reduce((s,x)=>s+x[1],0);for(const x of a){n-=x[1];if(n<=0)return x[0]}return a[0][0]};
-  const names=["Agatha","Brom","Crispin","Daphne","Eldric","Fizzle","Grenda","Horatio","Ivy","Jinx","Krum","Lavinia","Mog","Nettle","Orla","Pippin","Quibble","Ragna","Sprocket","Tilda","Ulf","Vex","Wobble","Xanthe","Yorick","Zib","Babs","Clonk","Doria","Eek","Fergus","Glim","Hilda","Isolde","Jasper","Kiki"];
-  const species=["human","goblin","elf","dwarf","orc","troll","kobold","gnome","centaur","merperson","skeleton","witch","vampire","fairy","dragonborn","werewolf","mimic","ghost","ogre","satyr","halfling","harpy","lizardfolk","ratfolk","demigod","sentient turnip","owlbear","pixie","yeti","giant"];
-  const jobs=["barber","tax collector","paladin","grave gardener","bard","accountant","dragon dentist","wizard intern","cheese inspector","royal jester","pirate librarian","goose lawyer","beekeeper","tavern critic","witchfinder","professional aunt","castle plumber","dungeon realtor","knight","mushroom farmer","court astrologer","orcish florist","necromancer","lamp lighter","soup engineer","unlicensed surgeon","wedding planner","minotaur coach","rat catcher","mayor"];
-  const personalities=["dramatically anxious","aggressively polite","mysteriously damp","very literal","budget-conscious","easily impressed","mildly haunted","unreasonably cheerful","suspicious of circles","in a hurry","deeply theatrical","allergic to subtlety"];
-  const materials=["iron","steel","bronze","silver","moonsteel","obsidian","star-metal","dragon glass","suspicious cheese-metal","copper","tin","mithril-ish","bog iron","sun brass","ghost silver","crystal alloy","volcano nickel","marsh bronze","thunder iron","goblin chrome"];
-  const traits=["sharp","sturdy","glowing","quiet","dramatic","fireproof","anti-curse","goose-approved","pigeon-friendly","reflective","tiny","extra-large","musical","waterproof","self-stirring","left-handed","polite","spooky","sparkly","unbreakable-ish","tax-deductible","sneeze-resistant","royal-looking","portable","dragon-proof","blessed","unreasonably pointy","non-stick","weatherproof","tasteful"];
-  const categories=["sword","axe","dagger","mace","shield","helmet","charm","horseshoe","goblet","tool","potion"];
-  const weaponTypes=["falchion","rapier","cleaver","sabre","hatchet","war axe","parrying dagger","spiked mace","buckler","tower shield"];
-  const potionEffects=["courage","invisibility","anti-narration","dramatic hair","fire resistance","temporary competence","truth-telling","pigeon diplomacy","slightly taller","quiet sneezing","tax evasion anxiety","frog comprehension","night vision","polite burping","dragon breath","mild levitation","sword confidence","clean socks","emergency charisma","goose immunity","rain resistance","unfortunate honesty","beard growth","anti-curse","sleepy focus","glitter removal","ghost visibility","tavern luck","dull pain","bold eyeliner"];
-  const reasons=["a duel with a mirror","a wedding where the cake is armed","keeping pigeons out of the treasury","an apology to a dragon","a very serious soup competition","escaping an overly emotional dungeon","winning an argument with a goose","a festival of competitive loafing","the annual haunted bake sale","impressing a tax collector","a date with a vampire accountant","defending a turnip patch","a ceremonial cheese cutting","a prophecy with poor handwriting","an emergency bard situation"];
-  const packaging=["corked bottle","skull flask","teapot","tiny keg","waxed vial","boot-shaped bottle","ceramic frog","silver thimble"];
-  const recipes={
-    sword:{name:"Sword",cost:3,price:34,traits:["sharp","sturdy"]},axe:{name:"Axe",cost:3,price:32,traits:["sharp","sturdy"]},dagger:{name:"Dagger",cost:2,price:23,traits:["sharp","portable"]},mace:{name:"Mace",cost:3,price:30,traits:["sturdy","dramatic"]},shield:{name:"Shield",cost:4,price:38,traits:["sturdy","protective"]},helmet:{name:"Helmet",cost:3,price:29,traits:["sturdy","royal-looking"]},charm:{name:"Charm",cost:1,price:19,traits:["sparkly","portable"]},horseshoe:{name:"Horseshoe",cost:2,price:20,traits:["sturdy","lucky"]},goblet:{name:"Goblet",cost:2,price:25,traits:["reflective","tasteful"]},tool:{name:"Tool",cost:2,price:22,traits:["sturdy","portable"]},potion:{name:"Potion",cost:1,price:24,traits:["mysterious","portable"]}
-  };
-  const upgrades={forge:{name:"Forge",base:55,desc:"Raises crafted quality."},cauldron:{name:"Cauldron",base:48,desc:"Makes potion brewing less embarrassing."},sign:{name:"Shop Sign",base:42,desc:"Attracts larger budgets."},bellows:{name:"Bellows",base:46,desc:"Adds a little quality."},shelves:{name:"Shelves",base:40,desc:"Holds more crafted stock."}};
-  const materialCost=Object.fromEntries(materials.map((m,i)=>[m,4+i*3]));
-  let state, backendRecords=[], saveChain=Promise.resolve(), saveRecord=null, selectedRecipe="sword";
+  const $ = id => document.getElementById(id);
+  const esc = value => String(value).replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+  const pick = list => list[Math.floor(Math.random() * list.length)];
+  const alpha = list => [...list].sort((a,b) => String(a.label || a.name || a).localeCompare(String(b.label || b.name || b), undefined, {sensitivity:"base"}));
+  const weighted = items => { let r = Math.random() * items.reduce((total, item) => total + item[1], 0); for (const item of items) { r -= item[1]; if (r <= 0) return item[0]; } return items[0][0]; };
 
-  function fresh(){
-    const stock={};materials.forEach((m,i)=>stock[m]=i<4?7: i===4?3:1);
-    return {day:1,coins:95,rep:5,upgrades:{forge:0,cauldron:0,sign:0,bellows:0,shelves:0},materials:stock,inventory:[],recent:[],events:["Day 1: You opened the shutters. A goose performed quality assurance."],requests:[],customer:null};
+  const potionBases = alpha(["Aether tonic","Bramble syrup","Crystal suspension","Dream distillate","Ember cordial","Ghostwater","Honeyed elixir","Ink infusion","Moonmilk","Mushroom draught","Nightshade essence","River tonic","Solar nectar","Starwine","Void brine"]);
+  const potionColors = alpha(["Amber","Azure","Black","Coral","Emerald","Gold","Indigo","Ivory","Lime","Mint","Obsidian","Pink","Ruby","Scarlet","Silver","Teal","Violet"]);
+  const potionFinishes = alpha(["Bubbling","Cloudy","Glittering","Iridescent","Matte","Metallic","Misty","Pearlescent","Smoky","Sparkling","Swirling","Translucent"]);
+  const potionShapes = alpha(["Anchor bottle","Basilisk eye vial","Crescent vial","Dragon-tooth vial","Heart bottle","Lantern bottle","Little boot flask","Mushroom jar","Round flask","Skull bottle","Spiral ampoule","Square bottle","Star bottle","Teardrop vial","Tiny barrel","Turnip jug"]);
+  const packaging = alpha(["Brass-capped carton","Corked bottle wrap","Felt-lined crate","Moonwax seal","Pocket satchel","Royal ribbon box","Rune-paper sleeve","Silver thimble case","Travel crate","Velvet display box","Waxed vial wrap"]);
+  const potionEffects = alpha(["Anti-curse","Anti-narration","Beard growth","Bold eyeliner","Courage","Dragon breath","Emergency charisma","Fire resistance","Frog comprehension","Ghost visibility","Glitter removal","Goose immunity","Invisibility","Mild levitation","Night vision","Pigeon diplomacy","Quiet sneezing","Rain resistance","Sleepy focus","Slightly taller","Sword confidence","Tavern luck","Temporary competence","Truth-telling","Unfortunate honesty"]);
+  const modifiers = alpha(["Blessed","Dragon-proof","Goose-approved","Left-handed","Non-stick","Pigeon-friendly","Portable","Royal-looking","Self-stirring","Sneeze-resistant","Tasteful","Weatherproof"]);
+  const contradictoryPairs = [["Invisibility","Glitter removal"],["Quiet sneezing","Dragon breath"],["Sleepy focus","Temporary competence"],["Truth-telling","Unfortunate honesty"]];
+
+  const materialData = [
+    ["Basilisk scale",31,"Rare","Venom-safe brews"],
+    ["Bog iron",10,"Common","Earthy stability"],
+    ["Bronze",11,"Common","Warm finish"],
+    ["Copper",9,"Common","Conductive sparkle"],
+    ["Crystal alloy",27,"Rare","Clear presentation"],
+    ["Dreamsilver",38,"Nexus","Dream effects"],
+    ["Dragon glass",29,"Rare","Heat-resistant bottles"],
+    ["Enchanted ice",26,"Unusual","Cooling finish"],
+    ["Frost-iron",24,"Unusual","Night vision affinity"],
+    ["Ghost silver",25,"Rare","Ghost visibility affinity"],
+    ["Goblin brass",17,"Unusual","Extra bubbly"],
+    ["Iron",4,"Common","Reliable"],
+    ["Leviathan bone",34,"Rare","Ocean-proof packaging"],
+    ["Meteorite iron",33,"Rare","Starry quality"],
+    ["Mithril-ish",18,"Unusual","Lightweight"],
+    ["Moonsteel",22,"Unusual","Moonlit polish"],
+    ["Obsidian",21,"Unusual","Smoky finish"],
+    ["Phoenix ash alloy",40,"Nexus","Fire resistance affinity"],
+    ["Royal jelly crystal",30,"Rare","Honeyed bases"],
+    ["Silver",15,"Common","Polished clarity"],
+    ["Star-metal",28,"Rare","Cosmic presentation"],
+    ["Steel",8,"Common","Dependable"],
+    ["Sunsteel",35,"Rare","Solar glow"],
+    ["Suspicious cheese-metal",14,"Absurd","Questionable aroma"],
+    ["Thunderbronze",32,"Rare","Electric sparkle"],
+    ["Tin",6,"Common","Modest shine"],
+    ["Voidglass",37,"Nexus","Invisibility affinity"],
+    ["Volcano nickel",23,"Unusual","Ember warmth"],
+    ["Witchwood",19,"Unusual","Herbal bases"]
+  ].map(([name,cost,rarity,bonus]) => ({name,cost,rarity,bonus}));
+  const materials = alpha(materialData);
+  const materialMap = Object.fromEntries(materials.map(m => [m.name,m]));
+
+  const recipes = {
+    axe:{name:"Axe",cost:3,price:32,traits:["Sharp","Sturdy"]},
+    charm:{name:"Charm",cost:1,price:19,traits:["Portable","Sparkly"]},
+    dagger:{name:"Dagger",cost:2,price:23,traits:["Portable","Sharp"]},
+    helmet:{name:"Helmet",cost:3,price:29,traits:["Royal-looking","Sturdy"]},
+    potion:{name:"Potion",cost:1,price:28,traits:[]},
+    shield:{name:"Shield",cost:4,price:38,traits:["Protective","Sturdy"]},
+    sword:{name:"Sword",cost:3,price:34,traits:["Sharp","Sturdy"]},
+    tool:{name:"Tool",cost:2,price:22,traits:["Portable","Sturdy"]}
+  };
+  const upgrades = {
+    bellows:{name:"Bellows",base:46,desc:"Adds a little quality."},
+    cauldron:{name:"Cauldron",base:48,desc:"Raises potion quality."},
+    forge:{name:"Forge",base:55,desc:"Raises crafted quality."},
+    shelves:{name:"Shelves",base:40,desc:"Holds more crafted stock."},
+    sign:{name:"Shop Sign",base:42,desc:"Attracts larger budgets."}
+  };
+
+  const decorOptions = [
+    ["Cauldron trim","Copper coil",35,1],["Cauldron trim","Dragon claw rim",90,3],["Cauldron trim","Moonstone lip",65,2],
+    ["Counter","Carved oak counter",42,1],["Counter","Goblin brass counter",72,2],["Counter","Meteorite slab",115,4],
+    ["Floor","Ember tile floor",50,1],["Floor","Mossy flagstones",40,1],["Floor","Star-map mosaic",105,3],
+    ["Forge surround","Basalt arch",48,1],["Forge surround","Dragon skull mantle",110,4],["Forge surround","Sunsteel screen",90,3],
+    ["Lighting","Firefly lanterns",38,1],["Lighting","Moonbeam sconces",70,2],["Lighting","Thunder globes",95,3],
+    ["Mascot","Apprentice goose",55,2],["Mascot","Pocket dragon",120,4],["Mascot","Tax-deductible rat",28,1],
+    ["Potion display","Floating shelf",68,2],["Potion display","Glass menagerie",55,1],["Potion display","Rotating moon rack",100,3],
+    ["Shelves","Basilisk-scale shelves",92,3],["Shelves","Creaky oak shelves",30,1],["Shelves","Levitating shelves",115,4],
+    ["Shop sign","Moonlit mortar sign",62,2],["Shop sign","Neon rune sign",105,4],["Shop sign","Painted plank sign",24,1],
+    ["Wall banner","Guild pennant",36,1],["Wall banner","Nexus tapestry",100,3],["Wall banner","Phoenix standard",78,2]
+  ].map(([category,name,price,rep]) => ({id:(category+"-"+name).toLowerCase().replace(/[^a-z0-9]+/g,"-"),category,name,price,rep}));
+  const decorations = alpha(decorOptions);
+
+  const nexusRoster = [
+    ["Dread/Concord","Ultimate Werewolf"],["Tengu","Ultimate Graffiti Artist"],["Sixer","Ultimate Paranormal Investigator"],["Motor","Ultimate Drag Racer"],["Warren & Wax Monster","Ultimate Candle Maker"],["Malrick","Ultimate Detective"],["Roman","Ultimate Train Conductor"],["Rocky","Ultimate Surfer"],["Veltaro","Ultimate Mafia Boss"],["Gunther","Ultimate Blacksmith"],["Mako","Ultimate Ship Captain"],["Astro","Ultimate Space Mercenary"],["Solar","Ultimate Guitarist"],["Lunar","Ultimate Bassist"],["Comet","Ultimate Space Pilot"],["Mark Ruster","Ultimate Firefighter"],["Cyrus","Ultimate Cybernetic Mutagenist"],["Tracker","Ultimate Recon Specialist"],["Cujo","Ultimate Baseball Star"],["Riot","Ultimate Street Fighter"],["Wire","Ultimate Gunsmith"],["David","Ultimate Werewolf Hunter"],["Nekrogoz","Ultimate Angel Hunter"],["Tomahawk","Ultimate Destroyer"],["Kaine","Ultimate General"],["Desmond","Ultimate Snowboarder"],["Crypt","Ultimate Executioner"],["Bruiser","Ultimate Boxer"],["Crasher E. Badger","Ultimate Bartender"],["Dranzer","Ultimate Necromancer"]
+  ].map(([name,title]) => ({name,title}));
+
+  const names = ["Agatha","Brom","Crispin","Daphne","Eldric","Fizzle","Grenda","Horatio","Ivy","Jinx","Krum","Lavinia","Mog","Nettle","Orla","Pippin","Quibble","Ragna","Sprocket","Tilda","Ulf","Vex","Wobble","Xanthe","Yorick","Zib"];
+  const species = ["centaur","dwarf","elf","fairy","ghost","goblin","gnome","human","kobold","merperson","mimic","orc","pixie","skeleton","troll","vampire","witch"];
+  const jobs = ["bard","castle plumber","cheese inspector","dragon dentist","grave gardener","pirate librarian","soup engineer","tax collector","tavern critic","wizard intern"];
+  const personalities = ["aggressively polite","budget-conscious","deeply theatrical","dramatically anxious","easily impressed","mildly haunted","mysteriously damp","suspicious of circles","unreasonably cheerful","very literal"];
+  const reasons = ["an emergency bard situation","a festival of competitive loafing","a haunted bake sale","a prophecy with poor handwriting","a very serious soup competition","an argument with a goose","an apology to a dragon","a wedding where the cake is armed"];
+
+  let state = null;
+  let backendRecords = [];
+  let saveRecord = null;
+  let saveChain = Promise.resolve();
+  let selectedRecipe = "potion";
+  let currentTab = "brew";
+  let initialized = false;
+  let controlsBound = false;
+
+  function fresh() {
+    const stock = {};
+    materials.forEach((material,index) => stock[material.name] = index < 6 ? 7 : index < 12 ? 3 : 1);
+    return {
+      day:1, coins:125, rep:5, upgrades:{forge:0,cauldron:0,sign:0,bellows:0,shelves:0},
+      materials:stock, inventory:[], recent:[], events:["Day 1: You opened the shutters. A goose performed quality assurance."],
+      requests:[], customer:null, lastNexusDay:0, nexusSeenThisWindow:false, lastNexusName:"",
+      purchasedDecorations:[], equippedDecorations:{}, selectedEffects:["Courage"], selectedRecipe:"potion"
+    };
   }
-  function makeCustomer(){
-    let c,sig,tries=0;
-    do{
-      const rarity=weighted([["Common",62],["Unusual",25],["Rare",10],["Absurd",3]]);
-      const category=pick(categories), personality=pick(personalities), urgent=pick(["Leisurely","Soon-ish","Urgent","Yesterday"]);
-      const material=rarity==="Common"?pick(materials.slice(0,5)):pick(materials);
-      const effect=pick(potionEffects), requestedTraits=category==="potion"?[effect,pick(traits)]:[pick(traits),pick(traits.filter(t=>t!==requestedTraits))];
-      const qty=rarity==="Absurd"?pick([3,4,5]):Math.random()<.18?2:1;
-      const patience=Math.max(2,Math.round((personality.includes("hurry")?3:5)+(rarity==="Absurd"?1:0)-(urgent==="Yesterday"?2:0)));
-      const budget=Math.round((recipes[category].price*qty+(rarity==="Rare"?20:rarity==="Absurd"?35:0)+(state.upgrades.sign*4))*(personality==="budget-conscious"?.82:1.08));
-      c={name:`${pick(names)} the ${pick(jobs)}`,species:pick(species),personality,rarity,category,material,traits:requestedTraits,qty,urgency:urgent,patience,budget,reason:`They need it for ${pick(reasons)}.`,package:pick(packaging)};
-      sig=[category,material,requestedTraits.join("-"),qty,urgent].join("|");tries++;
-    }while(state.recent.includes(sig)&&tries<18);
-    c.signature=sig;state.customer=c;state.recent=[sig,...state.recent].slice(0,8);state.requests.unshift(`Day ${state.day}: ${c.name}, a ${c.personality} ${c.species}, requested ${c.qty} ${c.material} ${c.category}${c.category==="potion"?" of "+c.traits[0]:" with "+c.traits.join(" and ")}.`);
+
+  function normalizeState() {
+    const base = fresh();
+    state = {...base,...state,upgrades:{...base.upgrades,...(state.upgrades||{})},materials:{...base.materials,...(state.materials||{})},equippedDecorations:{...(state.equippedDecorations||{})}};
+    state.inventory = Array.isArray(state.inventory) ? state.inventory : [];
+    state.recent = Array.isArray(state.recent) ? state.recent : [];
+    state.events = Array.isArray(state.events) ? state.events : base.events;
+    state.requests = Array.isArray(state.requests) ? state.requests : [];
+    state.purchasedDecorations = Array.isArray(state.purchasedDecorations) ? state.purchasedDecorations : [];
+    state.selectedEffects = Array.isArray(state.selectedEffects) && state.selectedEffects.length ? state.selectedEffects : ["Courage"];
+    selectedRecipe = state.selectedRecipe && recipes[state.selectedRecipe] ? state.selectedRecipe : "potion";
   }
-  function addEvent(msg){state.events.unshift(`Day ${state.day}: ${msg}`);state.events=state.events.slice(0,30)}
-  function quality(){return 1+state.upgrades.forge+state.upgrades.bellows+(Math.random()<.22?1:0)}
-  function modal(title,copy,actions=[["Close",()=>hideModal(),"secondary"]]){
-    $("modalTitle").textContent=title;$("modalCopy").textContent=copy;const a=$("modalActions");a.innerHTML="";
-    actions.forEach(([text,fn,cls])=>{const b=document.createElement("button");b.textContent=text;b.className=cls;b.type="button";b.onclick=fn;a.appendChild(b)});$("modal").classList.remove("hidden");a.querySelector("button")?.focus();
-  } function hideModal(){$("modal").classList.add("hidden")}
-  function render(){
-    const c=state.customer; $("dayValue").textContent=state.day;$("coinValue").textContent=state.coins;$("repValue").textContent=state.rep;$("levelValue").textContent=1+Object.values(state.upgrades).reduce((a,b)=>a+b,0);$("patienceValue").textContent=c?c.patience:"—";
-    $("customerName").textContent=c?c.name:"No customer";$("customerPersonality").textContent=c?`${c.species} · ${c.personality} · “The customer has opinions.”`:"";
-    if(c){$("rarityBadge").textContent=c.rarity;$("rarityBadge").className="badge rare-"+c.rarity;$("requestItem").textContent=c.category==="potion"?`${c.package} of potion: ${c.traits[0]}`:c.category;$("requestMaterial").textContent=c.material;$("requestTraits").textContent=c.traits.join(", ");$("requestQty").textContent=c.qty;$("requestUrgency").textContent=c.urgency;$("requestBudget").textContent=c.budget;$("requestReason").textContent=c.reason;$("customerHint").textContent=`They can endure ${c.patience} more questionable business decisions.`}
-    $("recipeList").innerHTML=Object.entries(recipes).map(([k,r])=>`<button class="recipe-card ${k===selectedRecipe?"selected":""}" data-r="${k}" type="button"><b>${esc(r.name)}</b><br><span class="tiny">${r.cost} material · 🪙${r.price}</span></button>`).join("");
-    document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{selectedRecipe=b.dataset.r;render()});
-    $("materialSelect").innerHTML=materials.map(m=>`<option value="${esc(m)}">${esc(m)} (${state.materials[m]||0} in stock)</option>`).join("");
-    $("modifierSelect").innerHTML=`<option value="">No modifier (the sensible choice)</option>${traits.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join("")}`;
-    const r=recipes[selectedRecipe];$("craftPreview").textContent=`${r.name}: needs ${r.cost} ${$("materialSelect").value||"iron"}; base sale value 🪙${r.price}. Quality assurance performed by a goose.`;
-    $("materialsList").innerHTML=materials.map(m=>`<div class="flex justify-between tiny border-b border-amber-900/20 py-1"><span>${esc(m)}</span><b>${state.materials[m]||0}</b></div>`).join("");
-    $("stockList").innerHTML=state.inventory.length?state.inventory.map((i,n)=>`<div class="stock-row tiny mb-1"><b>${esc(i.material)} ${esc(i.name)}</b> <span class="muted">· q${i.quality} · ${esc(i.traits.join(", "))}</span><br><button class="secondary mt-1 py-1 px-2" data-sell="${n}" type="button">Offer this item</button></div>`).join(""):`<p class="muted tiny">Empty shelves. Even the dust is disappointed.</p>`;
-    document.querySelectorAll("[data-sell]").forEach(b=>b.onclick=()=>sell(+b.dataset.sell));
-    $("upgradeList").innerHTML=Object.entries(upgrades).map(([k,u])=>{const lv=state.upgrades[k],cost=u.base*(lv+1);return `<div class="upgrade-card tiny flex items-center justify-between gap-2"><span><b>${u.name} ${lv}</b><br>${u.desc}</span><button class="secondary py-1 px-2" data-up="${k}" type="button">🪙${cost}</button></div>`}).join("");
-    document.querySelectorAll("[data-up]").forEach(b=>b.onclick=()=>upgrade(b.dataset.up));
-    $("requestLog").innerHTML=state.requests.slice(0,16).map(x=>`<div class="log-entry tiny">${esc(x)}</div>`).join("")||"<p class='muted'>No requests yet.</p>";
-    $("eventLog").innerHTML=state.events.slice(0,20).map(x=>`<div class="log-entry tiny">${esc(x)}</div>`).join("");
+
+  function addEvent(message) { state.events.unshift(`Day ${state.day}: ${message}`); state.events = state.events.slice(0,30); }
+  function quality() { return 1 + state.upgrades.forge + state.upgrades.bellows + (Math.random() < .22 ? 1 : 0); }
+  function decorRep() { return Object.values(state.equippedDecorations).reduce((total,id) => total + (decorations.find(d => d.id === id)?.rep || 0),0); }
+  function isContradictory(effects) { return contradictoryPairs.some(pair => pair.every(effect => effects.includes(effect))); }
+
+  function modal(title, copy, actions=[["Close",hideModal,"secondary"]]) {
+    $("modalTitle").textContent = title; $("modalCopy").textContent = copy;
+    const area = $("modalActions"); area.innerHTML = "";
+    actions.forEach(([text,fn,cls]) => { const button = document.createElement("button"); button.type="button"; button.textContent=text; button.className=cls; button.addEventListener("click",fn,{once:true}); area.appendChild(button); });
+    $("modal").classList.remove("hidden"); area.querySelector("button")?.focus();
+  }
+  function hideModal() { $("modal").classList.add("hidden"); }
+
+  function makeRequestProfile(rarity, nexusName="") {
+    const nexus = rarity === "Nexus";
+    const effectsCount = nexus ? weighted([[2,60],[3,35],[4,5]]) : rarity === "Absurd" ? weighted([[2,60],[3,40]]) : Math.random() < .56 ? 2 : 1;
+    const effects = [];
+    while (effects.length < effectsCount) {
+      const effect = pick(potionEffects);
+      if (!effects.includes(effect) && (rarity === "Absurd" || !isContradictory([...effects,effect]))) effects.push(effect);
+    }
+    const base = pick(potionBases), color = pick(potionColors), shape = pick(potionShapes), finish = pick(potionFinishes), pack = pick(packaging);
+    const material = nexus ? pick(materials.filter(m => ["Nexus","Rare"].includes(m.rarity))).name : rarity === "Common" ? pick(materials.filter(m => m.rarity === "Common")).name : pick(materials).name;
+    const constraints = nexus ? pick(["No dragon glitter. It compromises stealth.","Must survive a portal commute.","Absolutely no goose-related aftertaste.","Please make it theatrical, but legally subtle.","Keep it stable at impossible speeds."]) : pick(["No leaks during dramatic exits.","Must fit in a pocket.","Do not make it smell like regret.","Safe for formal wear.","Avoid accidental sentience."]);
+    return {base,color,shape,finish,package:pack,effects:alpha(effects),material,constraint:constraints,nexusName};
+  }
+
+  function makeCustomer(forceNexus=false) {
+    let rarity, nexusCharacter = null, profile, signature, tries = 0;
+    const due = state.day - state.lastNexusDay >= 5 && !state.nexusSeenThisWindow;
+    do {
+      rarity = forceNexus || due ? "Nexus" : weighted([["Common",59],["Unusual",25],["Rare",11],["Absurd",4],["Nexus",1]]);
+      if (rarity === "Nexus") {
+        const eligible = nexusRoster.filter(person => person.name !== state.lastNexusName);
+        nexusCharacter = pick(eligible.length ? eligible : nexusRoster);
+      } else nexusCharacter = null;
+      profile = makeRequestProfile(rarity, nexusCharacter?.name || "");
+      signature = [rarity,profile.material,profile.base,profile.color,profile.shape,profile.finish,profile.package,profile.effects.join("+")].join("|");
+      tries++;
+    } while (state.recent.includes(signature) && tries < 25);
+
+    const urgency = pick(["Leisurely","Soon-ish","Urgent","Yesterday"]);
+    const qty = rarity === "Nexus" ? pick([2,2,3]) : rarity === "Absurd" ? pick([2,3,4]) : Math.random() < .22 ? 2 : 1;
+    const personality = nexusCharacter ? "impossibly specific" : pick(personalities);
+    const budgetBase = 40 + profile.effects.length * 21 + qty * 14 + (rarity === "Nexus" ? 135 : rarity === "Rare" ? 42 : rarity === "Absurd" ? 55 : 0);
+    const customer = {
+      name:nexusCharacter ? nexusCharacter.name : `${pick(names)} the ${pick(jobs)}`,
+      title:nexusCharacter ? nexusCharacter.title : `a ${pick(species)} ${personality}`,
+      species:nexusCharacter ? "Nexus visitor" : pick(species),
+      personality, rarity, category:"potion", qty, urgency,
+      patience:Math.max(2, 5 - (urgency === "Yesterday" ? 2 : urgency === "Urgent" ? 1 : 0) + (rarity === "Nexus" ? 1 : 0)),
+      budget:Math.round((budgetBase + state.upgrades.sign * 5 + decorRep() * 3) * (personality === "budget-conscious" ? .9 : 1.06)),
+      profile,
+      reason:nexusCharacter ? `“${pick(["I need it before the next impossible mission.","My rivals have begun asking questions.","The timeline is being rude again.","I have a performance, pursuit, or prophecy to survive."])}”` : `They need it for ${pick(reasons)}.`,
+      signature
+    };
+    state.customer = customer;
+    state.recent = [signature,...state.recent].slice(0,12);
+    if (rarity === "Nexus") { state.lastNexusDay = state.day; state.nexusSeenThisWindow = true; state.lastNexusName = customer.name; }
+    state.requests.unshift(`Day ${state.day}: ${customer.name}${rarity === "Nexus" ? ` — ${customer.title}` : ""} requested ${qty} ${profile.color} ${profile.shape} potion${qty>1?"s":""}: ${profile.effects.join(" + ")}.`);
+    state.requests = state.requests.slice(0,30);
+  }
+
+  function potionDescription(item) {
+    return `${item.material} ${item.shape}, ${item.color}, ${item.effects.join(" + ")}${item.finish ? ` · ${item.finish}`:""}${item.base ? ` · ${item.base}`:""}${item.package ? ` · ${item.package}`:""}`;
+  }
+
+  function render() {
+    if (!state) return;
+    const c = state.customer;
+    $("dayValue").textContent=state.day; $("coinValue").textContent=state.coins; $("repValue").textContent=state.rep; $("levelValue").textContent=1+Object.values(state.upgrades).reduce((a,b)=>a+b,0); $("patienceValue").textContent=c?c.patience:"—";
     $("forgeMood").textContent=pick(["The anvil is judging you.","The cauldron is burbling legally.","A hammer sneezed.","Someone owes the bellows an apology."]);
+
+    $("customerName").textContent=c ? c.name : "No customer";
+    $("customerPersonality").textContent=c ? `${c.title} · ${c.species} · ${c.personality}` : "";
+    if (c) {
+      $("rarityBadge").textContent=c.rarity; $("rarityBadge").className=`badge rare-${c.rarity}`;
+      const p=c.profile;
+      $("requestRequirements").innerHTML=`
+        <div class="need-row"><b>Potion base:</b> ${esc(p.base)}</div>
+        <div class="need-row"><b>Required material:</b> ${esc(p.material)}</div>
+        <div class="need-row"><b>Required effects:</b> ${p.effects.map(effect=>`<span class="chip">${esc(effect)}</span>`).join("")}</div>
+        <div class="need-row"><b>Appearance:</b> ${esc(p.color)} · ${esc(p.finish)}</div>
+        <div class="need-row"><b>Bottle shape:</b> ${esc(p.shape)}</div>
+        <div class="need-row"><b>Packaging:</b> ${esc(p.package)}</div>
+        <div class="need-row"><b>Quantity:</b> ${c.qty} · <b>Urgency:</b> ${esc(c.urgency)}</div>
+        <div class="need-row"><b>Constraint:</b> ${esc(p.constraint)}</div>
+        <div class="need-row"><b>Budget:</b> 🪙 ${c.budget}</div>`;
+      $("requestReason").textContent=c.reason;
+      $("customerHint").textContent=`They can endure ${c.patience} more questionable business decisions. Nexus customers are rare, but the ledger ensures one appears at least every five days.`;
+    }
+
+    const visibleRecipes = currentTab === "brew" ? [["potion",recipes.potion]] : alpha(Object.entries(recipes).filter(([key])=>key!=="potion").map(([key,value])=>({key,...value}))).map(r=>[r.key,r]);
+    if (currentTab === "brew") selectedRecipe="potion";
+    $("recipeList").innerHTML=visibleRecipes.map(([key,recipe])=>`<button class="recipe-card ${key===selectedRecipe?"selected":""}" data-recipe="${esc(key)}" type="button"><b>${esc(recipe.name)}</b><br><span class="tiny">${recipe.cost} material · 🪙${recipe.price}</span></button>`).join("");
+    document.querySelectorAll("[data-recipe]").forEach(button=>button.addEventListener("click",()=>{selectedRecipe=button.dataset.recipe;state.selectedRecipe=selectedRecipe;render();}));
+
+    $("effectArea").classList.toggle("hidden",selectedRecipe!=="potion");
+    $("potionControls").classList.toggle("hidden",selectedRecipe!=="potion");
+    $("craftBtn").classList.toggle("hidden",selectedRecipe==="potion");
+    $("brewBtn").classList.toggle("hidden",selectedRecipe!=="potion");
+
+    $("materialSelect").innerHTML=materials.map(material=>`<option value="${esc(material.name)}">${esc(material.name)} — ${state.materials[material.name]||0} stock · 🪙${material.cost} · ${esc(material.rarity)} · ${esc(material.bonus)}</option>`).join("");
+    ["baseSelect","colorSelect","finishSelect","shapeSelect","packageSelect"].forEach((id,index)=> {
+      const list=[potionBases,potionColors,potionFinishes,potionShapes,packaging][index];
+      $(id).innerHTML=list.map(value=>`<option value="${esc(value)}">${esc(value)}</option>`).join("");
+    });
+    $("modifierSelect").innerHTML=`<option value="">No modifier (the sensible choice)</option>${modifiers.map(value=>`<option value="${esc(value)}">${esc(value)}</option>`).join("")}`;
+    $("effectsList").innerHTML=potionEffects.map(effect=>`<label class="effect-choice"><input type="checkbox" value="${esc(effect)}" ${state.selectedEffects.includes(effect)?"checked":""}> <span>${esc(effect)}</span></label>`).join("");
+    document.querySelectorAll("#effectsList input").forEach(input=>input.addEventListener("change",()=>{
+      state.selectedEffects=[...document.querySelectorAll("#effectsList input:checked")].map(box=>box.value);
+      $("effectSummary").textContent=state.selectedEffects.length ? `Selected effects: ${state.selectedEffects.join(" + ")}` : "Choose at least one effect before brewing.";
+    }));
+    $("effectSummary").textContent=state.selectedEffects.length ? `Selected effects: ${state.selectedEffects.join(" + ")}` : "Choose at least one effect before brewing.";
+
+    const r=recipes[selectedRecipe];
+    $("craftPreview").textContent=selectedRecipe==="potion" ? "Brewed potion stores its base, material, effects, colour, finish, shape, packaging, and modifier for precise matching." : `${r.name}: needs ${r.cost} selected material; base sale value 🪙${r.price}.`;
+    $("materialsList").innerHTML=materials.map(material=>`<div class="flex justify-between tiny border-b border-amber-900/20 py-1 gap-2"><span><b>${esc(material.name)}</b><br><span class="muted">${esc(material.rarity)} · ${esc(material.bonus)}</span></span><span><b>${state.materials[material.name]||0}</b><br>🪙${material.cost}</span></div>`).join("");
+    $("stockList").innerHTML=state.inventory.length ? state.inventory.map((item,index)=>`<div class="stock-row tiny mb-1"><b>${esc(item.category==="potion"?potionDescription(item):`${item.material} ${item.name}`)}</b><br><span class="muted">Quality ${item.quality}${item.modifier?` · ${esc(item.modifier)}`:""}</span><br><button class="secondary mt-1 py-1 px-2" data-sell="${index}" type="button">Offer this item</button></div>`).join("") : `<p class="muted tiny">Empty shelves. Even the dust is disappointed.</p>`;
+    document.querySelectorAll("[data-sell]").forEach(button=>button.addEventListener("click",()=>sell(Number(button.dataset.sell))));
+
+    $("upgradeList").innerHTML=Object.entries(upgrades).map(([key,upgrade])=>{const lv=state.upgrades[key],cost=upgrade.base*(lv+1);return `<div class="upgrade-card tiny flex items-center justify-between gap-2"><span><b>${esc(upgrade.name)} ${lv}</b><br>${esc(upgrade.desc)}</span><button class="secondary py-1 px-2" data-upgrade="${key}" type="button">🪙${cost}</button></div>`}).join("");
+    document.querySelectorAll("[data-upgrade]").forEach(button=>button.addEventListener("click",()=>upgrade(button.dataset.upgrade)));
+
+    $("decorBonus").textContent=`Reputation bonus: +${decorRep()}`;
+    $("decorList").innerHTML=decorations.map(decoration=> {
+      const owned=state.purchasedDecorations.includes(decoration.id), equipped=state.equippedDecorations[decoration.category]===decoration.id;
+      return `<article class="decor-card tiny"><b>${esc(decoration.category)}:</b> ${esc(decoration.name)}<br><span class="muted">🪙${decoration.price} · +${decoration.rep} reputation appeal</span><div class="mt-2">${owned?`<button class="${equipped?"equip":"secondary"} py-1 px-2" data-equip="${decoration.id}" type="button">${equipped?"Equipped":"Equip"}</button>`:`<button class="secondary py-1 px-2" data-buy="${decoration.id}" type="button">Buy</button>`}</div></article>`;
+    }).join("");
+    document.querySelectorAll("[data-buy]").forEach(button=>button.addEventListener("click",()=>buyDecoration(button.dataset.buy)));
+    document.querySelectorAll("[data-equip]").forEach(button=>button.addEventListener("click",()=>equipDecoration(button.dataset.equip)));
+
+    $("requestLog").innerHTML=state.requests.slice(0,16).map(row=>`<div class="log-entry tiny">${esc(row)}</div>`).join("") || "<p class='muted'>No requests yet.</p>";
+    $("eventLog").innerHTML=state.events.slice(0,20).map(row=>`<div class="log-entry tiny">${esc(row)}</div>`).join("");
+    $("brewTab").classList.toggle("active",currentTab==="brew"); $("forgeTab").classList.toggle("active",currentTab==="forge");
+    $("brewTab").setAttribute("aria-selected",String(currentTab==="brew")); $("forgeTab").setAttribute("aria-selected",String(currentTab==="forge"));
     lucide.createIcons();
   }
-  function craft(forcePotion=false){
-    const key=forcePotion?"potion":selectedRecipe,r=recipes[key],mat=$("materialSelect").value,mod=$("modifierSelect").value;
-    if((state.materials[mat]||0)<r.cost)return modal("Material Misfortune",`You need ${r.cost} units of ${mat}, but the shelves contain only ${state.materials[mat]||0}. The anvil laughs in metal.`);
-    state.materials[mat]-=r.cost;const tr=[...r.traits];if(key==="potion")tr[0]=pick(potionEffects);if(mod)tr.push(mod);
-    const item={name:r.name,category:key,material:mat,traits:[...new Set(tr)],quality:quality(),day:state.day};state.inventory.push(item);addEvent(`Crafted ${mat} ${r.name.toLowerCase()} (quality ${item.quality}). ${key==="potion"?"It tastes like a legal dispute.":"The hammer seemed pleased."}`);modal("Craft Complete",`A ${mat} ${r.name.toLowerCase()} joins the stock. Quality ${item.quality}. ${item.traits.join(", ")}.`);render();save();
+
+  function craftPotion() {
+    const effects=[...document.querySelectorAll("#effectsList input:checked")].map(box=>box.value);
+    if (!effects.length) return modal("Missing Potion Traits","Choose at least one potion effect. A bottle of vaguely damp liquid is not a commission.");
+    if (isContradictory(effects)) return modal("Invalid Combination","Those effects contradict one another outside Absurd commissions. The cauldron refuses to litigate reality.");
+    const material=$("materialSelect").value, cost=recipes.potion.cost;
+    if ((state.materials[material]||0)<cost) return modal("Material Misfortune",`You need ${cost} unit of ${material}, but only ${state.materials[material]||0} remains.`);
+    state.materials[material]-=cost;
+    const item={name:"Potion",category:"potion",material,base:$("baseSelect").value,color:$("colorSelect").value,finish:$("finishSelect").value,shape:$("shapeSelect").value,package:$("packageSelect").value,effects:alpha(effects),modifier:$("modifierSelect").value,quality:quality()+state.upgrades.cauldron,day:state.day};
+    state.inventory.push(item); state.selectedEffects=item.effects;
+    addEvent(`Brewed ${potionDescription(item)}. The cauldron made a pleased noise.`);
+    modal("Potion Brewed",`${potionDescription(item)} joins the stock. Quality ${item.quality}.`);
+    render(); save();
   }
-  function sell(index){
-    const item=state.inventory[index],c=state.customer;if(!item||!c)return;
-    let points=0,notes=[];if(item.category===c.category){points+=38;notes.push("right category")}else{points-=28;notes.push("spectacularly wrong category")}
-    if(item.material===c.material){points+=24;notes.push("right material")}else{points-=8;notes.push("material mismatch")}
-    const matched=c.traits.filter(t=>item.traits.includes(t)).length;points+=matched*16;if(matched)notes.push(`${matched} requested trait${matched>1?"s":""}`);
-    if(item.quality>=2){points+=item.quality*4;notes.push("decent quality")}if(c.qty===1)points+=10;else points-=9;
-    if(c.urgency==="Yesterday")points-=5;if(points>=70){const earned=Math.round(c.budget*(1+state.rep/200));state.coins+=earned;state.rep+=8;state.inventory.splice(index,1);addEvent(`Success: ${c.name} paid 🪙${earned}. Satisfaction ${points}.`);modal("Glorious Sale!",`Perfect enough! ${c.name} pays 🪙${earned}. Breakdown: ${notes.join(", ")}. They leave a review containing eleven exclamation marks.`);makeCustomer()}
-    else if(points>=35){const earned=Math.round(c.budget*.48);state.coins+=earned;state.rep=Math.max(0,state.rep-1);state.inventory.splice(index,1);c.patience--;addEvent(`Partial sale to ${c.name}: 🪙${earned}, satisfaction ${points}.`);modal("Reluctant Acceptance",`“It is technically an object,” says the customer. You receive 🪙${earned}. Breakdown: ${notes.join(", ")}.`)}
-    else{c.patience--;state.rep=Math.max(0,state.rep-3);addEvent(`${c.name} rejected an item. Satisfaction ${points}.`);modal("Customer Rejects It",`The customer squints and says, “This is not what I meant by that.” Breakdown: ${notes.join(", ")}. Patience falls.`);if(c.patience<=0){addEvent(`${c.name} stormed out, taking their opinions elsewhere.`);makeCustomer()}}
-    render();save();
+
+  function craftItem() {
+    const recipe=recipes[selectedRecipe], material=$("materialSelect").value;
+    if ((state.materials[material]||0)<recipe.cost) return modal("Material Misfortune",`You need ${recipe.cost} units of ${material}, but the shelves contain only ${state.materials[material]||0}.`);
+    state.materials[material]-=recipe.cost;
+    state.inventory.push({name:recipe.name,category:selectedRecipe,material,traits:recipe.traits,quality:quality(),day:state.day});
+    addEvent(`Crafted ${material} ${recipe.name.toLowerCase()}. The hammer seemed pleased.`);
+    modal("Craft Complete",`A ${material} ${recipe.name.toLowerCase()} joins the stock.`);
+    render(); save();
   }
-  function newCustomer(){if(state.customer){state.customer.patience--;addEvent("You rang for a new customer. The old one left a strongly worded note.");if(state.customer.patience<=0)state.rep=Math.max(0,state.rep-1)}makeCustomer();render();save()}
-  function restock(){const mat=$("materialSelect").value,cost=materialCost[mat];if(state.coins<cost)return modal("Coin Shortage",`A crate of ${mat} costs 🪙${cost}. Your purse emits a hollow cough.`);state.coins-=cost;state.materials[mat]=(state.materials[mat]||0)+3;addEvent(`Restocked 3 ${mat} for 🪙${cost}.`);render();save()}
-  function upgrade(k){const u=upgrades[k],cost=u.base*(state.upgrades[k]+1);if(state.coins<cost)return modal("Upgrade Denied",`The ${u.name.toLowerCase()} demands 🪙${cost}. It has expensive emotional needs.`);state.coins-=cost;state.upgrades[k]++;addEvent(`Upgraded ${u.name} to level ${state.upgrades[k]}.`);modal("Workshop Improved",`${u.name} is now level ${state.upgrades[k]}. ${u.desc}`);render();save()}
-  function endDay(){state.day++;if(state.customer){state.customer.patience--;if(state.customer.patience<=0){addEvent("Your waiting customer departed at dawn, offended by calendars.");makeCustomer()}}const e=pick([
-    ()=>{state.coins+=12;return"An overexcited bard reviewed the shop. +🪙12, though they rhymed 'forge' with 'porridge'."},
-    ()=>{state.materials.iron+=3;return"A goblin bulk-order deposit arrived as 3 iron ingots and a suspicious wink."},
-    ()=>{state.rep+=4;return"A dragon bought a tiny spoon and praised your restraint. +4 reputation."},
-    ()=>{state.coins=Math.max(0,state.coins-9);return"A tax collector found a tax on being charming. -🪙9."},
-    ()=>{state.materials.steel+=2;return"A cursed anvil sneezed out 2 steel ingots."},
-    ()=>{state.rep+=6;return"A surprise festival featured your work. +6 reputation."}
-  ]);addEvent(e());if(Math.random()<.65)makeCustomer();modal(`Day ${state.day}`,state.events[0]);render();save()}
-  async function save(){
-    if(!saveRecord)return;$("saveStatus").textContent="Updating the Canva Sheet ledger…";
+
+  function sell(index) {
+    const item=state.inventory[index], customer=state.customer;
+    if (!item || !customer) return;
+    if (item.category!=="potion") return modal("Wrong Kind of Commission","This customer ordered a potion. The non-potion recipes remain useful workshop stock, but this order needs a brew.");
+    const p=customer.profile, matched=[], missing=[];
+    const fields=[["material",item.material,p.material],["base",item.base,p.base],["colour",item.color,p.color],["finish",item.finish,p.finish],["shape",item.shape,p.shape],["packaging",item.package,p.package]];
+    let points=20;
+    fields.forEach(([label,value,needed])=>{if(value===needed){points+=8;matched.push(label)}else{points-=3;missing.push(`${label} (${needed})`);}});
+    const effectMatches=p.effects.filter(effect=>item.effects.includes(effect));
+    const effectMissing=p.effects.filter(effect=>!item.effects.includes(effect));
+    points+=effectMatches.length*16; if(effectMatches.length) matched.push(`${effectMatches.join(" + ")} effect${effectMatches.length>1?"s":""}`); if(effectMissing.length) missing.push(`effects: ${effectMissing.join(" + ")}`);
+    if (item.quality>=2) {points+=item.quality*3;matched.push("quality");}
+    if (customer.qty===1) points+=8; else { points-=8; missing.push(`quantity ${customer.qty} requested`); }
+    const detail=`Matched: ${matched.length?matched.join(", "):"nothing useful"}. Missing or mismatched: ${missing.length?missing.join("; "):"nothing"}.`;
+    if (points>=88 && effectMissing.length===0) {
+      const earned=Math.round(customer.budget*(1+state.rep/200)); state.coins+=earned; state.rep+=8+decorRep(); state.inventory.splice(index,1);
+      addEvent(`Success: ${customer.name} paid 🪙${earned}. Satisfaction ${points}.`); modal("Glorious Potion Sale!",`Every requirement matched. ${customer.name} pays 🪙${earned}. ${detail}`); makeCustomer();
+    } else if (points>=40) {
+      const earned=Math.round(customer.budget*.5); state.coins+=earned; state.rep=Math.max(0,state.rep-1); state.inventory.splice(index,1); customer.patience--;
+      addEvent(`Partial potion sale to ${customer.name}: 🪙${earned}.`); modal("Reluctant Acceptance",`“It is technically potion-shaped,” says the customer. You receive 🪙${earned}. ${detail}`);
+    } else {
+      customer.patience--; state.rep=Math.max(0,state.rep-3); addEvent(`${customer.name} rejected a potion. Satisfaction ${points}.`);
+      modal("Customer Rejects It",`The customer squints at the bottle. ${detail}`);
+      if(customer.patience<=0){addEvent(`${customer.name} departed, taking their opinions elsewhere.`);makeCustomer();}
+    }
+    render(); save();
+  }
+
+  function restock() {
+    const material=materialMap[$("materialSelect").value];
+    if (!material) return;
+    if (state.coins<material.cost) return modal("Coin Shortage",`A crate of ${material.name} costs 🪙${material.cost}. Your purse emits a hollow cough.`);
+    state.coins-=material.cost; state.materials[material.name]=(state.materials[material.name]||0)+3;
+    addEvent(`Restocked 3 ${material.name} for 🪙${material.cost}.`); render(); save();
+  }
+  function upgrade(key) {
+    const upgrade=upgrades[key], cost=upgrade.base*(state.upgrades[key]+1);
+    if(state.coins<cost)return modal("Upgrade Denied",`The ${upgrade.name.toLowerCase()} demands 🪙${cost}. It has expensive emotional needs.`);
+    state.coins-=cost;state.upgrades[key]++;addEvent(`Upgraded ${upgrade.name} to level ${state.upgrades[key]}.`);modal("Workshop Improved",`${upgrade.name} is now level ${state.upgrades[key]}. ${upgrade.desc}`);render();save();
+  }
+  function buyDecoration(id) {
+    const decoration=decorations.find(d=>d.id===id); if(!decoration)return;
+    if(state.coins<decoration.price)return modal("Insufficient Coins",`${decoration.name} costs 🪙${decoration.price}. The decorator does not accept dramatic sighs as currency.`);
+    state.coins-=decoration.price;state.purchasedDecorations.push(id);state.equippedDecorations[decoration.category]=id;
+    addEvent(`Purchased and equipped ${decoration.name}. The shop now looks ${decoration.rep} points more impressive.`);
+    modal("Decoration Purchased",`${decoration.name} is equipped. It adds +${decoration.rep} shop appeal.`);render();save();
+  }
+  function equipDecoration(id) {
+    const decoration=decorations.find(d=>d.id===id);if(!decoration||!state.purchasedDecorations.includes(id))return;
+    state.equippedDecorations[decoration.category]=id;addEvent(`Equipped ${decoration.name}.`);render();save();
+  }
+  function newCustomer() {
+    if(state.customer){state.customer.patience--;addEvent("You rang for a new customer. The old one left a strongly worded note.");if(state.customer.patience<=0)state.rep=Math.max(0,state.rep-1);}
+    makeCustomer();render();save();
+  }
+  function endDay() {
+    state.day++;
+    if(state.customer){state.customer.patience--;if(state.customer.patience<=0){addEvent("Your waiting customer departed at dawn, offended by calendars.");makeCustomer();}}
+    const event=pick([
+      ()=>{state.coins+=12;return"An overexcited bard reviewed the shop. +🪙12, though they rhymed forge with porridge."},
+      ()=>{state.materials["Iron"]=(state.materials["Iron"]||0)+3;return"A goblin bulk-order deposit arrived as 3 iron ingots and a suspicious wink."},
+      ()=>{state.rep+=4;return"A dragon bought a tiny spoon and praised your restraint. +4 reputation."},
+      ()=>{state.coins=Math.max(0,state.coins-9);return"A tax collector found a tax on being charming. -🪙9."},
+      ()=>{state.materials["Steel"]=(state.materials["Steel"]||0)+2;return"A cursed anvil sneezed out 2 steel ingots."},
+      ()=>{state.rep+=6;return"A surprise festival featured your work. +6 reputation."}
+    ]);
+    addEvent(event());
+    if(!state.customer || Math.random()<.65)makeCustomer();
+    modal(`Day ${state.day}`,state.events[0]);render();save();
+  }
+
+  async function save() {
+    if(!state) return;
+    $("saveStatus").textContent="Updating the Canva Sheet ledger…";
     const payload={game_state:JSON.stringify(state),updated_at:new Date().toISOString()};
-    saveChain=saveChain.then(async()=>{const result=saveRecord?await window.dataSdk.update({...saveRecord,...payload}):await window.dataSdk.create(payload);if(!result.isOk){$("saveStatus").textContent="Could not confirm the ledger update. Keep playing; try again shortly."}else $("saveStatus").textContent="Saved to your Canva Sheet."}).catch(()=>{$("saveStatus").textContent="The ledger is temporarily smudged."});
+    saveChain=saveChain.then(async()=>{
+      const result=saveRecord ? await window.dataSdk.update({...saveRecord,...payload}) : await window.dataSdk.create(payload);
+      if(!result.isOk){$("saveStatus").textContent="Could not confirm the ledger update. Keep playing; refresh only after checking the Data button.";}
+      else $("saveStatus").textContent="Saved to your Canva Sheet.";
+    }).catch(()=>{$("saveStatus").textContent="The ledger is temporarily smudged. Try another action shortly.";});
     return saveChain;
   }
-  const handler={onDataChanged(data){backendRecords=data;const newest=[...data].sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)))[0];if(newest){saveRecord=newest;try{state=JSON.parse(newest.game_state);$("saveStatus").textContent="Saved game restored from your Canva Sheet."}catch{state=fresh();makeCustomer()}}else{state=fresh();makeCustomer();$("saveStatus").textContent="A fresh ledger awaits.";save()}render()}};
-  async function init(){try{const r=await window.dataSdk.init(handler);if(!r.isOk){state=fresh();makeCustomer();render();$("saveStatus").textContent="Could not open the Canva Sheet ledger."}}catch{state=fresh();makeCustomer();render();$("saveStatus").textContent="Could not open the Canva Sheet ledger."}}
-  $("craftBtn").onclick=()=>craft(false);$("brewBtn").onclick=()=>craft(true);$("restockBtn").onclick=restock;$("sellBtn").onclick=()=>{if(!state.inventory.length)return modal("Nothing to Sell","The shelves are empty. Even the cobwebs are out of stock.");sell(0)};$("newCustomerBtn").onclick=newCustomer;$("endDayBtn").onclick=endDay;
-  $("resetBtn").onclick=()=>modal("Reset This Forge?", "This replaces your current workshop progress in the Canva Sheet. The goose will remember, but the ledger will not.",[["Reset game",()=>{state=fresh();makeCustomer();addEvent("New game: the forge has been reset with ceremonial dramatic sweeping.");hideModal();render();save()},"danger"],["Keep my forge",hideModal,"secondary"]]);
-  $("modal").addEventListener("click",e=>{if(e.target===$("modal"))hideModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")hideModal()});
+
+  const handler = {
+    onDataChanged(data) {
+      backendRecords=data;
+      const newest=[...data].sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)))[0];
+      if(newest) {
+        saveRecord=newest;
+        try { state=JSON.parse(newest.game_state);normalizeState();$("saveStatus").textContent="Saved game restored from your Canva Sheet."; }
+        catch { state=fresh();makeCustomer();$("saveStatus").textContent="The old ledger was unreadable; a fresh forge was prepared."; }
+      } else {
+        state=fresh();makeCustomer();$("saveStatus").textContent="A fresh ledger awaits.";save();
+      }
+      render();
+    }
+  };
+
+  function bindControls() {
+    if(controlsBound)return;
+    controlsBound=true;
+    $("craftBtn").addEventListener("click",craftItem);
+    $("brewBtn").addEventListener("click",craftPotion);
+    $("restockBtn").addEventListener("click",restock);
+    $("sellBtn").addEventListener("click",()=>{if(!state.inventory.length)return modal("Nothing to Sell","The shelves are empty. Even the cobwebs are out of stock.");sell(0);});
+    $("newCustomerBtn").addEventListener("click",newCustomer);
+    $("endDayBtn").addEventListener("click",endDay);
+    $("brewTab").addEventListener("click",()=>{currentTab="brew";selectedRecipe="potion";render();});
+    $("forgeTab").addEventListener("click",()=>{currentTab="forge";if(selectedRecipe==="potion")selectedRecipe="sword";render();});
+    $("resetBtn").addEventListener("click",()=>modal("Reset This Forge?","This replaces your current workshop progress in the Canva Sheet. The goose will remember, but the ledger will not.",[
+      ["Reset game",()=>{state=fresh();makeCustomer();addEvent("New game: the forge has been reset with ceremonial dramatic sweeping.");hideModal();render();save();},"danger"],
+      ["Keep my forge",hideModal,"secondary"]
+    ]));
+    $("modal").addEventListener("click",event=>{if(event.target===$("modal"))hideModal();});
+    document.addEventListener("keydown",event=>{if(event.key==="Escape")hideModal();});
+  }
+
+  async function init() {
+    if(initialized)return;
+    initialized=true;
+    bindControls();
+    try {
+      const result=await window.dataSdk.init(handler);
+      if(!result.isOk){state=fresh();makeCustomer();render();$("saveStatus").textContent="Could not open the Canva Sheet ledger. The forge is playable, but saves cannot be confirmed.";}
+    } catch {
+      state=fresh();makeCustomer();render();$("saveStatus").textContent="Could not open the Canva Sheet ledger. The forge is playable, but saves cannot be confirmed.";}
+  }
   init();
 })();
 </script>
