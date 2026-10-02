@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20261002-05-536c453","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/6542d56fbfe7a3eb.telemetry_sdk.js" integrity="sha512-ECdM0nK7EkwDuOqho2qxgyRQXyBHk9hZqRKMBr+Xsu6zjeHlt+qkO2N2YRiHN7Kg4e1fEHDhjIp4bGJYVypv1g=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anvil &amp; Alchemy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&amp;family=Eczar:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#26180f;--parchment:#f4ddb0;--paper:#ffecc8;--iron:#332b28;--brass:#c88b31;--ember:#dc5a26;--glow:#ffbe4b;--moss:#476544}
+    *{box-sizing:border-box} body{margin:0;font-family:Alegreya,serif;color:var(--ink);background:#1d1614;min-width:320px}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(circle at 12% 15%,#f08b3d 0 1px,transparent 2px),radial-gradient(circle at 83% 31%,#ffd56b 0 1px,transparent 2px),radial-gradient(circle at 55% 77%,#cb4e23 0 1px,transparent 2px);background-size:100px 120px,145px 110px,130px 160px;animation:embers 8s linear infinite}
+    @keyframes embers{50%{transform:translateY(-12px)}} @keyframes rise{to{transform:translateY(-18px);opacity:0}}
+    .game-shell{width:100%;min-height:calc(100 * min(var(--vh, 1vh), 1vh));background:linear-gradient(130deg,#201714,#38251c 45%,#211817);padding:16px}
+    .forge-board{max-width:1500px;margin:auto}.iron-frame{border:2px solid #78532f;box-shadow:inset 0 0 0 4px #2b201b,0 9px 25px #0b0706;border-radius:14px}
+    .parchment{background:linear-gradient(135deg,#ffe9ba,#edcd92);border:1px solid #af7838;box-shadow:inset 0 0 22px #b7784530}
+    .dark-panel{background:linear-gradient(145deg,#3a2a23,#211917);color:#ffe8bb;border:1px solid #72502d}
+    .title-font{font-family:Eczar,serif}.status-pill{background:#251b16;border:1px solid #855d30;color:#ffe4ab;padding:.45rem .7rem;border-radius:999px;white-space:nowrap}
+    .panel-title{font-family:Eczar,serif;font-size:1.1rem;color:#6d3519;border-bottom:2px solid #c99045;padding-bottom:.35rem;margin-bottom:.65rem}
+    button,select{font:inherit} button{transition:.18s transform,.18s filter;cursor:pointer}button:hover{filter:brightness(1.08);transform:translateY(-1px)}button:focus-visible,select:focus-visible{outline:3px solid #ffe477;outline-offset:3px}button:disabled{opacity:.48;cursor:not-allowed;transform:none}
+    .action{border:1px solid #713719;background:linear-gradient(#e78037,#ae421c);color:#fff5d4;padding:.55rem .8rem;border-radius:8px;font-weight:700}.secondary{border:1px solid #85603a;background:#f0cf91;color:#392114;padding:.5rem .75rem;border-radius:8px;font-weight:700}.danger{background:#742d27;color:#fff1d2;border:1px solid #be6450;padding:.45rem .7rem;border-radius:8px}
+    .tiny{font-size:.86rem}.muted{color:#785337}.badge{display:inline-block;padding:.14rem .48rem;border-radius:999px;font-weight:700;font-size:.8rem;background:#68482d;color:#ffe8b5}.rare-Rare,.rare-Absurd{background:#70385b;color:#ffe6ff}.rare-Unusual{background:#27556a;color:#dff7ff}
+    .recipe-card,.upgrade-card,.stock-row{border:1px solid #b68143;background:#fff0cb;border-radius:9px;padding:.55rem}.recipe-card.selected{outline:3px solid #d65a28;background:#ffe0a0}.recipe-card button{width:100%}
+    .scrollbox{max-height:265px;overflow:auto;padding-right:4px}.scrollbox::-webkit-scrollbar{width:8px}.scrollbox::-webkit-scrollbar-thumb{background:#a66c34;border-radius:9px}
+    .log-entry{border-left:3px solid #a95f2b;padding:.35rem .55rem;margin:.4rem 0;background:#ffffff42}.smoke{position:absolute;border-radius:50%;background:#e9d3b250;filter:blur(4px);animation:rise 3.5s infinite ease-out}
+    .modal-backdrop{position:fixed;inset:0;background:#120c09bb;display:flex;align-items:center;justify-content:center;padding:18px;z-index:30}.modal-box{max-width:510px;width:100%;padding:22px;border-radius:16px}
+    @media(max-width:800px){.game-shell{padding:8px}.status-wrap{justify-content:flex-start}.scrollbox{max-height:210px}}
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/6c2ecc939521f244.data_sdk.js" type="text/javascript" integrity="sha512-gRx8s+XsZDN6mSIQu2sivLZysbV0WHhb5kXNUWlgVb5lCMU1foJYukyMEDPv8Tnoocb8iwqB4XdRrWc7oEGzIQ=="></script>
+  <script src="/_sdk/b443124ed7f67435.editing_sdk.js" type="text/javascript" integrity="sha512-oLX1dpTmN2mZumhKQc0okubrUJ8MqA6c5fM5NHln6+9t8KpYrcElyL7NOV7dV6pLkMWSzWZRFAI+WLGRVrl64A=="></script>
+  <script src="/_sdk/ab4336f91e694f96.resizing_sdk.js" type="text/javascript" integrity="sha512-cxmeUrBrNlwwLr+tEu/iwM5F3boeK4qDMoH3QjUPqJptkO5NkaDVhQvyIHIn+3EflI5/uubWzkSA78B1tCswgA=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: linear-gradient(130deg, rgb(32, 23, 20), rgb(56, 37, 28));">
+  <div class="game-shell">
+   <div class="forge-board">
+    <header data-template-id="top-banner" class="canva-header dark-panel iron-frame p-4 relative overflow-hidden" style="background: linear-gradient(145deg, rgb(58, 42, 35), rgb(33, 25, 23));"><span class="smoke" style="width:55px;height:55px;left:7%;bottom:5px"></span><span class="smoke" style="width:38px;height:38px;right:14%;bottom:1px;animation-delay:1s"></span>
+     <div class="flex flex-wrap items-center justify-between gap-3 relative">
+      <div>
+       <h1 data-template-id="game-title" class="canva-text title-font text-2xl md:text-3xl leading-tight" style="color: rgb(255, 227, 166); font-weight: 800; font-style: normal; font-size: 32px;">Anvil &amp; Alchemy</h1>
+       <p data-template-id="game-subtitle" class="canva-text tiny text-amber-100" style="color: rgb(248, 214, 156); font-weight: 400; font-style: italic; font-size: 16px;">The Extremely Questionable Forge</p>
+      </div>
+      <div class="status-wrap flex flex-wrap gap-2" aria-label="Game status"><span class="status-pill">Day <b id="dayValue">1</b></span><span class="status-pill">🪙 <b id="coinValue">0</b></span><span class="status-pill">★ <b id="repValue">0</b></span><span class="status-pill">Level <b id="levelValue">1</b></span><span class="status-pill">Patience <b id="patienceValue">0</b></span>
+      </div>
+     </div>
+    </header>
+    <main class="mt-4 grid grid-cols-1 xl:grid-cols-12 gap-4">
+     <section class="xl:col-span-8 space-y-4" aria-label="Workshop">
+      <div data-template-id="workshop-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+       <div class="flex flex-wrap justify-between gap-2 items-center">
+        <h2 data-template-id="workshop-heading" class="canva-text panel-title mb-0" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">The Workshop Floor</h2><span id="forgeMood" class="badge">The anvil is judging you.</span>
+       </div>
+       <div class="grid md:grid-cols-2 gap-4 mt-3">
+        <div>
+         <h3 data-template-id="recipes-heading" class="canva-text font-bold text-lg" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 19px;">Pick a recipe</h3>
+         <div id="recipeList" class="grid grid-cols-2 gap-2 mt-2"></div>
+        </div>
+        <div><label data-template-id="material-label" class="canva-text font-bold block mb-1" for="materialSelect" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Choose primary material</label> <select id="materialSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select> <label data-template-id="modifier-label" class="canva-text font-bold block mt-3 mb-1" for="modifierSelect" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Optional modifier</label> <select id="modifierSelect" class="w-full rounded-lg border border-amber-800 bg-amber-50 p-2"></select>
+         <p id="craftPreview" class="tiny muted mt-3"></p>
+         <div class="flex flex-wrap gap-2 mt-3"><button id="craftBtn" data-template-id="craft-button" class="canva-button action" type="button" style="background: linear-gradient(rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="hammer" class="inline w-4"></i> <span data-template-id="craft-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">Craft Item</span></button> <button id="brewBtn" data-template-id="brew-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="flask-conical" class="inline w-4"></i> <span data-template-id="brew-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Brew Potion</span></button> <button id="restockBtn" data-template-id="restock-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="package-plus" class="inline w-4"></i> <span data-template-id="restock-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">Restock Materials</span></button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+       <section data-template-id="inventory-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+        <h2 data-template-id="inventory-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Stock &amp; Materials</h2>
+        <div id="materialsList" class="scrollbox space-y-1" aria-label="Material inventory"></div>
+        <h3 data-template-id="crafted-heading" class="canva-text font-bold mt-3" style="color: rgb(59, 33, 20); font-weight: 700; font-style: normal; font-size: 19px;">Crafted Stock</h3>
+        <div id="stockList" class="scrollbox mt-1" aria-live="polite"></div>
+       </section>
+       <section data-template-id="upgrade-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+        <h2 data-template-id="upgrades-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Workshop Upgrades</h2>
+        <div id="upgradeList" class="space-y-2"></div><button id="endDayBtn" data-template-id="end-day-button" class="canva-button action w-full mt-3" type="button" style="background: linear-gradient(rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="moon" class="inline w-4"></i> <span data-template-id="end-day-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">End Day</span></button>
+       </section>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+       <section data-template-id="request-log-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+        <h2 data-template-id="request-log-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Request Log</h2>
+        <div id="requestLog" class="scrollbox"></div>
+       </section>
+       <section data-template-id="event-log-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+        <h2 data-template-id="event-log-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">Event Log</h2>
+        <div id="eventLog" class="scrollbox"></div>
+       </section>
+      </div>
+     </section>
+     <aside class="xl:col-span-4 space-y-4" aria-label="Customer and help">
+      <section data-template-id="customer-panel" class="canva-card dark-panel iron-frame p-4" style="background: linear-gradient(145deg, rgb(58, 42, 35), rgb(33, 25, 23));">
+       <div class="flex justify-between items-start gap-3">
+        <div>
+         <p data-template-id="commission-kicker" class="canva-text text-amber-300 font-bold tiny" style="color: rgb(244, 187, 83); font-weight: 700; font-style: normal; font-size: 16px; letter-spacing: 0.08rem;">CURRENT COMMISSION</p>
+         <h2 id="customerName" class="title-font text-2xl"></h2>
+        </div><span id="rarityBadge" class="badge"></span>
+       </div>
+       <p id="customerPersonality" class="italic text-amber-100 mt-1"></p>
+       <div class="mt-3 space-y-2 text-sm">
+        <div>
+         <b>Order:</b> <span id="requestItem"></span>
+        </div>
+        <div>
+         <b>Material:</b> <span id="requestMaterial"></span>
+        </div>
+        <div>
+         <b>Wanted traits:</b> <span id="requestTraits"></span>
+        </div>
+        <div>
+         <b>Quantity:</b> <span id="requestQty"></span> · <b>Urgency:</b> <span id="requestUrgency"></span>
+        </div>
+        <div>
+         <b>Budget:</b> 🪙 <span id="requestBudget"></span>
+        </div>
+       </div>
+       <blockquote id="requestReason" class="mt-3 border-l-4 border-amber-500 pl-3 text-amber-100 italic"></blockquote>
+       <div class="grid grid-cols-2 gap-2 mt-4"><button id="sellBtn" data-template-id="sell-button" class="canva-button action" type="button" style="background: linear-gradient(rgb(231, 128, 55), rgb(174, 66, 28)); color: rgb(255, 245, 212);"><i data-lucide="coins" class="inline w-4"></i> <span data-template-id="sell-button-text" class="canva-text" style="color: rgb(255, 245, 212); font-weight: 700; font-style: normal; font-size: 16px;">Sell from Stock</span></button> <button id="newCustomerBtn" data-template-id="new-customer-button" class="canva-button secondary" type="button" style="background: rgb(240, 207, 145); color: rgb(57, 33, 20);"><i data-lucide="users" class="inline w-4"></i> <span data-template-id="new-customer-button-text" class="canva-text" style="color: rgb(57, 33, 20); font-weight: 700; font-style: normal; font-size: 16px;">New Customer</span></button>
+       </div>
+       <p id="customerHint" class="tiny text-amber-200 mt-3"></p>
+      </section>
+      <section data-template-id="howto-panel" class="canva-panel parchment iron-frame p-4" style="background: linear-gradient(135deg, rgb(255, 233, 186), rgb(237, 205, 146));">
+       <h2 data-template-id="howto-heading" class="canva-text panel-title" style="color: rgb(109, 53, 25); font-weight: 700; font-style: normal; font-size: 24px;">How to Play</h2>
+       <p data-template-id="howto-copy" class="canva-text" style="color: rgb(59, 33, 20); font-weight: 400; font-style: normal; font-size: 16px;">Read the commission, select a recipe and material, then craft or brew. Offer crafted stock to the customer and match category, material, and traits for the best reward. Upgrade the workshop, survive weird events, and keep your reputation out of the dungeon.</p><button id="resetBtn" data-template-id="reset-button" class="canva-button danger mt-3" type="button" style="background: rgb(116, 45, 39); color: rgb(255, 241, 210);"><i data-lucide="rotate-ccw" class="inline w-4"></i> <span data-template-id="reset-button-text" class="canva-text" style="color: rgb(255, 241, 210); font-weight: 700; font-style: normal; font-size: 16px;">New Game / Reset</span></button>
+       <p id="saveStatus" class="tiny muted mt-2" aria-live="polite">Preparing the ledger…</p>
+      </section>
+     </aside>
+    </main>
+   </div>
+  </div>
+  <div id="modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+   <div class="modal-box parchment iron-frame">
+    <h2 id="modalTitle" class="title-font text-2xl"></h2>
+    <p id="modalCopy" class="mt-2"></p>
+    <div id="modalActions" class="flex gap-2 mt-5"></div>
+   </div>
+  </div>
+  <script>
+(() => {
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+  const pick=a=>a[Math.floor(Math.random()*a.length)];
+  const weighted=a=>{let n=Math.random()*a.reduce((s,x)=>s+x[1],0);for(const x of a){n-=x[1];if(n<=0)return x[0]}return a[0][0]};
+  const names=["Agatha","Brom","Crispin","Daphne","Eldric","Fizzle","Grenda","Horatio","Ivy","Jinx","Krum","Lavinia","Mog","Nettle","Orla","Pippin","Quibble","Ragna","Sprocket","Tilda","Ulf","Vex","Wobble","Xanthe","Yorick","Zib","Babs","Clonk","Doria","Eek","Fergus","Glim","Hilda","Isolde","Jasper","Kiki"];
+  const species=["human","goblin","elf","dwarf","orc","troll","kobold","gnome","centaur","merperson","skeleton","witch","vampire","fairy","dragonborn","werewolf","mimic","ghost","ogre","satyr","halfling","harpy","lizardfolk","ratfolk","demigod","sentient turnip","owlbear","pixie","yeti","giant"];
+  const jobs=["barber","tax collector","paladin","grave gardener","bard","accountant","dragon dentist","wizard intern","cheese inspector","royal jester","pirate librarian","goose lawyer","beekeeper","tavern critic","witchfinder","professional aunt","castle plumber","dungeon realtor","knight","mushroom farmer","court astrologer","orcish florist","necromancer","lamp lighter","soup engineer","unlicensed surgeon","wedding planner","minotaur coach","rat catcher","mayor"];
+  const personalities=["dramatically anxious","aggressively polite","mysteriously damp","very literal","budget-conscious","easily impressed","mildly haunted","unreasonably cheerful","suspicious of circles","in a hurry","deeply theatrical","allergic to subtlety"];
+  const materials=["iron","steel","bronze","silver","moonsteel","obsidian","star-metal","dragon glass","suspicious cheese-metal","copper","tin","mithril-ish","bog iron","sun brass","ghost silver","crystal alloy","volcano nickel","marsh bronze","thunder iron","goblin chrome"];
+  const traits=["sharp","sturdy","glowing","quiet","dramatic","fireproof","anti-curse","goose-approved","pigeon-friendly","reflective","tiny","extra-large","musical","waterproof","self-stirring","left-handed","polite","spooky","sparkly","unbreakable-ish","tax-deductible","sneeze-resistant","royal-looking","portable","dragon-proof","blessed","unreasonably pointy","non-stick","weatherproof","tasteful"];
+  const categories=["sword","axe","dagger","mace","shield","helmet","charm","horseshoe","goblet","tool","potion"];
+  const weaponTypes=["falchion","rapier","cleaver","sabre","hatchet","war axe","parrying dagger","spiked mace","buckler","tower shield"];
+  const potionEffects=["courage","invisibility","anti-narration","dramatic hair","fire resistance","temporary competence","truth-telling","pigeon diplomacy","slightly taller","quiet sneezing","tax evasion anxiety","frog comprehension","night vision","polite burping","dragon breath","mild levitation","sword confidence","clean socks","emergency charisma","goose immunity","rain resistance","unfortunate honesty","beard growth","anti-curse","sleepy focus","glitter removal","ghost visibility","tavern luck","dull pain","bold eyeliner"];
+  const reasons=["a duel with a mirror","a wedding where the cake is armed","keeping pigeons out of the treasury","an apology to a dragon","a very serious soup competition","escaping an overly emotional dungeon","winning an argument with a goose","a festival of competitive loafing","the annual haunted bake sale","impressing a tax collector","a date with a vampire accountant","defending a turnip patch","a ceremonial cheese cutting","a prophecy with poor handwriting","an emergency bard situation"];
+  const packaging=["corked bottle","skull flask","teapot","tiny keg","waxed vial","boot-shaped bottle","ceramic frog","silver thimble"];
+  const recipes={
+    sword:{name:"Sword",cost:3,price:34,traits:["sharp","sturdy"]},axe:{name:"Axe",cost:3,price:32,traits:["sharp","sturdy"]},dagger:{name:"Dagger",cost:2,price:23,traits:["sharp","portable"]},mace:{name:"Mace",cost:3,price:30,traits:["sturdy","dramatic"]},shield:{name:"Shield",cost:4,price:38,traits:["sturdy","protective"]},helmet:{name:"Helmet",cost:3,price:29,traits:["sturdy","royal-looking"]},charm:{name:"Charm",cost:1,price:19,traits:["sparkly","portable"]},horseshoe:{name:"Horseshoe",cost:2,price:20,traits:["sturdy","lucky"]},goblet:{name:"Goblet",cost:2,price:25,traits:["reflective","tasteful"]},tool:{name:"Tool",cost:2,price:22,traits:["sturdy","portable"]},potion:{name:"Potion",cost:1,price:24,traits:["mysterious","portable"]}
+  };
+  const upgrades={forge:{name:"Forge",base:55,desc:"Raises crafted quality."},cauldron:{name:"Cauldron",base:48,desc:"Makes potion brewing less embarrassing."},sign:{name:"Shop Sign",base:42,desc:"Attracts larger budgets."},bellows:{name:"Bellows",base:46,desc:"Adds a little quality."},shelves:{name:"Shelves",base:40,desc:"Holds more crafted stock."}};
+  const materialCost=Object.fromEntries(materials.map((m,i)=>[m,4+i*3]));
+  let state, backendRecords=[], saveChain=Promise.resolve(), saveRecord=null, selectedRecipe="sword";
+
+  function fresh(){
+    const stock={};materials.forEach((m,i)=>stock[m]=i<4?7: i===4?3:1);
+    return {day:1,coins:95,rep:5,upgrades:{forge:0,cauldron:0,sign:0,bellows:0,shelves:0},materials:stock,inventory:[],recent:[],events:["Day 1: You opened the shutters. A goose performed quality assurance."],requests:[],customer:null};
+  }
+  function makeCustomer(){
+    let c,sig,tries=0;
+    do{
+      const rarity=weighted([["Common",62],["Unusual",25],["Rare",10],["Absurd",3]]);
+      const category=pick(categories), personality=pick(personalities), urgent=pick(["Leisurely","Soon-ish","Urgent","Yesterday"]);
+      const material=rarity==="Common"?pick(materials.slice(0,5)):pick(materials);
+      const effect=pick(potionEffects), requestedTraits=category==="potion"?[effect,pick(traits)]:[pick(traits),pick(traits.filter(t=>t!==requestedTraits))];
+      const qty=rarity==="Absurd"?pick([3,4,5]):Math.random()<.18?2:1;
+      const patience=Math.max(2,Math.round((personality.includes("hurry")?3:5)+(rarity==="Absurd"?1:0)-(urgent==="Yesterday"?2:0)));
+      const budget=Math.round((recipes[category].price*qty+(rarity==="Rare"?20:rarity==="Absurd"?35:0)+(state.upgrades.sign*4))*(personality==="budget-conscious"?.82:1.08));
+      c={name:`${pick(names)} the ${pick(jobs)}`,species:pick(species),personality,rarity,category,material,traits:requestedTraits,qty,urgency:urgent,patience,budget,reason:`They need it for ${pick(reasons)}.`,package:pick(packaging)};
+      sig=[category,material,requestedTraits.join("-"),qty,urgent].join("|");tries++;
+    }while(state.recent.includes(sig)&&tries<18);
+    c.signature=sig;state.customer=c;state.recent=[sig,...state.recent].slice(0,8);state.requests.unshift(`Day ${state.day}: ${c.name}, a ${c.personality} ${c.species}, requested ${c.qty} ${c.material} ${c.category}${c.category==="potion"?" of "+c.traits[0]:" with "+c.traits.join(" and ")}.`);
+  }
+  function addEvent(msg){state.events.unshift(`Day ${state.day}: ${msg}`);state.events=state.events.slice(0,30)}
+  function quality(){return 1+state.upgrades.forge+state.upgrades.bellows+(Math.random()<.22?1:0)}
+  function modal(title,copy,actions=[["Close",()=>hideModal(),"secondary"]]){
+    $("modalTitle").textContent=title;$("modalCopy").textContent=copy;const a=$("modalActions");a.innerHTML="";
+    actions.forEach(([text,fn,cls])=>{const b=document.createElement("button");b.textContent=text;b.className=cls;b.type="button";b.onclick=fn;a.appendChild(b)});$("modal").classList.remove("hidden");a.querySelector("button")?.focus();
+  } function hideModal(){$("modal").classList.add("hidden")}
+  function render(){
+    const c=state.customer; $("dayValue").textContent=state.day;$("coinValue").textContent=state.coins;$("repValue").textContent=state.rep;$("levelValue").textContent=1+Object.values(state.upgrades).reduce((a,b)=>a+b,0);$("patienceValue").textContent=c?c.patience:"—";
+    $("customerName").textContent=c?c.name:"No customer";$("customerPersonality").textContent=c?`${c.species} · ${c.personality} · “The customer has opinions.”`:"";
+    if(c){$("rarityBadge").textContent=c.rarity;$("rarityBadge").className="badge rare-"+c.rarity;$("requestItem").textContent=c.category==="potion"?`${c.package} of potion: ${c.traits[0]}`:c.category;$("requestMaterial").textContent=c.material;$("requestTraits").textContent=c.traits.join(", ");$("requestQty").textContent=c.qty;$("requestUrgency").textContent=c.urgency;$("requestBudget").textContent=c.budget;$("requestReason").textContent=c.reason;$("customerHint").textContent=`They can endure ${c.patience} more questionable business decisions.`}
+    $("recipeList").innerHTML=Object.entries(recipes).map(([k,r])=>`<button class="recipe-card ${k===selectedRecipe?"selected":""}" data-r="${k}" type="button"><b>${esc(r.name)}</b><br><span class="tiny">${r.cost} material · 🪙${r.price}</span></button>`).join("");
+    document.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>{selectedRecipe=b.dataset.r;render()});
+    $("materialSelect").innerHTML=materials.map(m=>`<option value="${esc(m)}">${esc(m)} (${state.materials[m]||0} in stock)</option>`).join("");
+    $("modifierSelect").innerHTML=`<option value="">No modifier (the sensible choice)</option>${traits.map(t=>`<option value="${esc(t)}">${esc(t)}</option>`).join("")}`;
+    const r=recipes[selectedRecipe];$("craftPreview").textContent=`${r.name}: needs ${r.cost} ${$("materialSelect").value||"iron"}; base sale value 🪙${r.price}. Quality assurance performed by a goose.`;
+    $("materialsList").innerHTML=materials.map(m=>`<div class="flex justify-between tiny border-b border-amber-900/20 py-1"><span>${esc(m)}</span><b>${state.materials[m]||0}</b></div>`).join("");
+    $("stockList").innerHTML=state.inventory.length?state.inventory.map((i,n)=>`<div class="stock-row tiny mb-1"><b>${esc(i.material)} ${esc(i.name)}</b> <span class="muted">· q${i.quality} · ${esc(i.traits.join(", "))}</span><br><button class="secondary mt-1 py-1 px-2" data-sell="${n}" type="button">Offer this item</button></div>`).join(""):`<p class="muted tiny">Empty shelves. Even the dust is disappointed.</p>`;
+    document.querySelectorAll("[data-sell]").forEach(b=>b.onclick=()=>sell(+b.dataset.sell));
+    $("upgradeList").innerHTML=Object.entries(upgrades).map(([k,u])=>{const lv=state.upgrades[k],cost=u.base*(lv+1);return `<div class="upgrade-card tiny flex items-center justify-between gap-2"><span><b>${u.name} ${lv}</b><br>${u.desc}</span><button class="secondary py-1 px-2" data-up="${k}" type="button">🪙${cost}</button></div>`}).join("");
+    document.querySelectorAll("[data-up]").forEach(b=>b.onclick=()=>upgrade(b.dataset.up));
+    $("requestLog").innerHTML=state.requests.slice(0,16).map(x=>`<div class="log-entry tiny">${esc(x)}</div>`).join("")||"<p class='muted'>No requests yet.</p>";
+    $("eventLog").innerHTML=state.events.slice(0,20).map(x=>`<div class="log-entry tiny">${esc(x)}</div>`).join("");
+    $("forgeMood").textContent=pick(["The anvil is judging you.","The cauldron is burbling legally.","A hammer sneezed.","Someone owes the bellows an apology."]);
+    lucide.createIcons();
+  }
+  function craft(forcePotion=false){
+    const key=forcePotion?"potion":selectedRecipe,r=recipes[key],mat=$("materialSelect").value,mod=$("modifierSelect").value;
+    if((state.materials[mat]||0)<r.cost)return modal("Material Misfortune",`You need ${r.cost} units of ${mat}, but the shelves contain only ${state.materials[mat]||0}. The anvil laughs in metal.`);
+    state.materials[mat]-=r.cost;const tr=[...r.traits];if(key==="potion")tr[0]=pick(potionEffects);if(mod)tr.push(mod);
+    const item={name:r.name,category:key,material:mat,traits:[...new Set(tr)],quality:quality(),day:state.day};state.inventory.push(item);addEvent(`Crafted ${mat} ${r.name.toLowerCase()} (quality ${item.quality}). ${key==="potion"?"It tastes like a legal dispute.":"The hammer seemed pleased."}`);modal("Craft Complete",`A ${mat} ${r.name.toLowerCase()} joins the stock. Quality ${item.quality}. ${item.traits.join(", ")}.`);render();save();
+  }
+  function sell(index){
+    const item=state.inventory[index],c=state.customer;if(!item||!c)return;
+    let points=0,notes=[];if(item.category===c.category){points+=38;notes.push("right category")}else{points-=28;notes.push("spectacularly wrong category")}
+    if(item.material===c.material){points+=24;notes.push("right material")}else{points-=8;notes.push("material mismatch")}
+    const matched=c.traits.filter(t=>item.traits.includes(t)).length;points+=matched*16;if(matched)notes.push(`${matched} requested trait${matched>1?"s":""}`);
+    if(item.quality>=2){points+=item.quality*4;notes.push("decent quality")}if(c.qty===1)points+=10;else points-=9;
+    if(c.urgency==="Yesterday")points-=5;if(points>=70){const earned=Math.round(c.budget*(1+state.rep/200));state.coins+=earned;state.rep+=8;state.inventory.splice(index,1);addEvent(`Success: ${c.name} paid 🪙${earned}. Satisfaction ${points}.`);modal("Glorious Sale!",`Perfect enough! ${c.name} pays 🪙${earned}. Breakdown: ${notes.join(", ")}. They leave a review containing eleven exclamation marks.`);makeCustomer()}
+    else if(points>=35){const earned=Math.round(c.budget*.48);state.coins+=earned;state.rep=Math.max(0,state.rep-1);state.inventory.splice(index,1);c.patience--;addEvent(`Partial sale to ${c.name}: 🪙${earned}, satisfaction ${points}.`);modal("Reluctant Acceptance",`“It is technically an object,” says the customer. You receive 🪙${earned}. Breakdown: ${notes.join(", ")}.`)}
+    else{c.patience--;state.rep=Math.max(0,state.rep-3);addEvent(`${c.name} rejected an item. Satisfaction ${points}.`);modal("Customer Rejects It",`The customer squints and says, “This is not what I meant by that.” Breakdown: ${notes.join(", ")}. Patience falls.`);if(c.patience<=0){addEvent(`${c.name} stormed out, taking their opinions elsewhere.`);makeCustomer()}}
+    render();save();
+  }
+  function newCustomer(){if(state.customer){state.customer.patience--;addEvent("You rang for a new customer. The old one left a strongly worded note.");if(state.customer.patience<=0)state.rep=Math.max(0,state.rep-1)}makeCustomer();render();save()}
+  function restock(){const mat=$("materialSelect").value,cost=materialCost[mat];if(state.coins<cost)return modal("Coin Shortage",`A crate of ${mat} costs 🪙${cost}. Your purse emits a hollow cough.`);state.coins-=cost;state.materials[mat]=(state.materials[mat]||0)+3;addEvent(`Restocked 3 ${mat} for 🪙${cost}.`);render();save()}
+  function upgrade(k){const u=upgrades[k],cost=u.base*(state.upgrades[k]+1);if(state.coins<cost)return modal("Upgrade Denied",`The ${u.name.toLowerCase()} demands 🪙${cost}. It has expensive emotional needs.`);state.coins-=cost;state.upgrades[k]++;addEvent(`Upgraded ${u.name} to level ${state.upgrades[k]}.`);modal("Workshop Improved",`${u.name} is now level ${state.upgrades[k]}. ${u.desc}`);render();save()}
+  function endDay(){state.day++;if(state.customer){state.customer.patience--;if(state.customer.patience<=0){addEvent("Your waiting customer departed at dawn, offended by calendars.");makeCustomer()}}const e=pick([
+    ()=>{state.coins+=12;return"An overexcited bard reviewed the shop. +🪙12, though they rhymed 'forge' with 'porridge'."},
+    ()=>{state.materials.iron+=3;return"A goblin bulk-order deposit arrived as 3 iron ingots and a suspicious wink."},
+    ()=>{state.rep+=4;return"A dragon bought a tiny spoon and praised your restraint. +4 reputation."},
+    ()=>{state.coins=Math.max(0,state.coins-9);return"A tax collector found a tax on being charming. -🪙9."},
+    ()=>{state.materials.steel+=2;return"A cursed anvil sneezed out 2 steel ingots."},
+    ()=>{state.rep+=6;return"A surprise festival featured your work. +6 reputation."}
+  ]);addEvent(e());if(Math.random()<.65)makeCustomer();modal(`Day ${state.day}`,state.events[0]);render();save()}
+  async function save(){
+    if(!saveRecord)return;$("saveStatus").textContent="Updating the Canva Sheet ledger…";
+    const payload={game_state:JSON.stringify(state),updated_at:new Date().toISOString()};
+    saveChain=saveChain.then(async()=>{const result=saveRecord?await window.dataSdk.update({...saveRecord,...payload}):await window.dataSdk.create(payload);if(!result.isOk){$("saveStatus").textContent="Could not confirm the ledger update. Keep playing; try again shortly."}else $("saveStatus").textContent="Saved to your Canva Sheet."}).catch(()=>{$("saveStatus").textContent="The ledger is temporarily smudged."});
+    return saveChain;
+  }
+  const handler={onDataChanged(data){backendRecords=data;const newest=[...data].sort((a,b)=>String(b.updated_at).localeCompare(String(a.updated_at)))[0];if(newest){saveRecord=newest;try{state=JSON.parse(newest.game_state);$("saveStatus").textContent="Saved game restored from your Canva Sheet."}catch{state=fresh();makeCustomer()}}else{state=fresh();makeCustomer();$("saveStatus").textContent="A fresh ledger awaits.";save()}render()}};
+  async function init(){try{const r=await window.dataSdk.init(handler);if(!r.isOk){state=fresh();makeCustomer();render();$("saveStatus").textContent="Could not open the Canva Sheet ledger."}}catch{state=fresh();makeCustomer();render();$("saveStatus").textContent="Could not open the Canva Sheet ledger."}}
+  $("craftBtn").onclick=()=>craft(false);$("brewBtn").onclick=()=>craft(true);$("restockBtn").onclick=restock;$("sellBtn").onclick=()=>{if(!state.inventory.length)return modal("Nothing to Sell","The shelves are empty. Even the cobwebs are out of stock.");sell(0)};$("newCustomerBtn").onclick=newCustomer;$("endDayBtn").onclick=endDay;
+  $("resetBtn").onclick=()=>modal("Reset This Forge?", "This replaces your current workshop progress in the Canva Sheet. The goose will remember, but the ledger will not.",[["Reset game",()=>{state=fresh();makeCustomer();addEvent("New game: the forge has been reset with ceremonial dramatic sweeping.");hideModal();render();save()},"danger"],["Keep my forge",hideModal,"secondary"]]);
+  $("modal").addEventListener("click",e=>{if(e.target===$("modal"))hideModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape")hideModal()});
+  init();
+})();
+</script>
+ 
+</body></html>
